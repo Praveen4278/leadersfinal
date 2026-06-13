@@ -87,9 +87,26 @@ const formats = [
   { icon: Mountain, title: "Outbound Programs", desc: "Experiential learning that disrupts thinking through real-world doing." },
 ];
 
-const clients = [
-  "Tata Group", "Mahindra", "Godrej", "Wipro", "HDFC Bank",
-  "Kotak", "DHL", "Panasonic", "HP", "Schneider Electric",
+import {
+  SiMastercard,
+  SiDhl,
+  SiPanasonic,
+  SiHp,
+  SiWipro,
+} from "react-icons/si";
+
+type HomeClient = {
+  name: string;
+  Icon: any;
+  color: string;
+};
+
+const clients: HomeClient[] = [
+  { name: "Mastercard", Icon: SiMastercard, color: "#EB001B" },
+  { name: "DHL", Icon: SiDhl, color: "#CC0000" },
+  { name: "Panasonic", Icon: SiPanasonic, color: "#0070C0" },
+  { name: "HP", Icon: SiHp, color: "#0096D6" },
+  { name: "Wipro", Icon: SiWipro, color: "#341C57" },
 ];
 
 const stats = [
@@ -309,7 +326,7 @@ export default function Home() {
       </section>
 
       {/* ── IMPACT STATS ── */}
-      <section className="bg-primary py-20 text-white">
+      <section className="bg-secondary py-20 text-foreground">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((s, i) => (
@@ -320,8 +337,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="font-serif text-5xl md:text-6xl font-bold text-accent mb-2">{s.num}</div>
-                <div className="text-xs uppercase tracking-widest text-white/70">{s.label}</div>
+                <div className="font-serif text-5xl md:text-6xl font-bold text-primary mb-2">{s.num}</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -340,7 +357,7 @@ export default function Home() {
             Our Clients
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-x-12 gap-y-8 items-center justify-items-center">
-            {clients.map((name, i) => (
+            {clients.map((client, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
@@ -350,11 +367,12 @@ export default function Home() {
                 className="text-center"
               >
                 <div className="w-20 h-20 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
-                  <span className="font-bold text-primary text-lg">
-                    {name.split(" ").map((w) => w[0]).join("").slice(0, 2)}
-                  </span>
+                  <client.Icon
+                    className="h-10 w-10"
+                    style={{ color: client.color }}
+                  />
                 </div>
-                <p className="text-xs text-muted-foreground font-medium">{name}</p>
+                <p className="text-xs text-muted-foreground font-medium">{client.name}</p>
               </motion.div>
             ))}
           </div>
@@ -402,6 +420,42 @@ export default function Home() {
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── PARTNERS ── */}
+      <section className="py-24 bg-white border-y border-border/40">
+        <div className="container mx-auto px-6 lg:px-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Partners</h2>
+            <div className="w-12 h-1 bg-accent mx-auto" />
+          </motion.div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center opacity-60">
+            {clients.map((client, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group flex flex-col items-center gap-3"
+              >
+                <client.Icon
+                  className="h-10 w-10 transition-all duration-300 group-hover:scale-110"
+                  style={{ color: client.color }}
+                />
+                <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                  {client.name}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

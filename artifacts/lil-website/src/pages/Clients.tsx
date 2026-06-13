@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { Landmark, Building2, Globe2, Briefcase } from "lucide-react";
+import clientImg1 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09.jpeg";
+import clientImg2 from "@assets/WhatsApp Image 2026-06-13 at 12.11.10.jpeg";
 import {
   SiMastercard,
   SiDhl,
@@ -8,97 +11,144 @@ import {
   SiPanasonic,
   SiHp,
   SiWipro,
+  SiTata,
+  SiMahindra,
+  SiTcs,
 } from "react-icons/si";
-import type { IconType } from "react-icons";
+import {
+  SchneiderElectricIcon,
+  SaintGobainIcon,
+  InvisalignIcon,
+  CitiIcon,
+  IciciBankIcon,
+  IdbiBankIcon,
+  BankOfBarodaIcon,
+  IobIcon,
+  AxisBankIcon,
+  YesBankIcon,
+  HdfcBankIcon,
+  LicIcon,
+  KotakBankIcon,
+  TechMahindraIcon,
+  LtiMindtreeIcon,
+  EurofinsIcon,
+  MphasisIcon,
+  HexawareIcon,
+  ClevertapIcon,
+  AjantaPharmaIcon,
+  PidiliteIcon,
+  DdecorIcon,
+  YashamIcon,
+  AshtechIcon,
+  IiflIcon,
+  CsbBankIcon,
+  CorporationBankIcon,
+  SampathBankIcon,
+  BankOfCeylonIcon,
+  JuliusBaerIcon,
+  BirlaSunlifeIcon,
+  MaxLifeIcon,
+  NationTrustIcon,
+  NextGenIcon,
+  ZensarIcon,
+  GenesisIcon,
+  FoodlandIcon,
+} from "../icons/client-logos";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
+import type { IconType } from "react-icons";
+
 type Client = {
   name: string;
-  abbr?: string;
-  bg?: string;
-  fg?: string;
   Icon?: IconType;
   iconStyle?: React.CSSProperties;
+  abbr?: string;
 };
 
-const sectors: { label: string; accentClass: string; clients: Client[] }[] = [
+const sectors: { label: string; icon: any; accentClass: string; clients: Client[] }[] = [
   {
     label: "Manufacturing",
+    icon: Building2,
     accentClass: "text-primary",
     clients: [
-      { name: "Saint Gobain",       abbr: "SG",  bg: "#E42313", fg: "#fff" },
-      { name: "Ajanta Pharma",      abbr: "AP",  bg: "#004B87", fg: "#fff" },
-      { name: "Mahindra & Mahindra",abbr: "M&M", bg: "#BE0000", fg: "#fff" },
-      { name: "Pidilite Industries",abbr: "PI",  bg: "#2E3990", fg: "#fff" },
-      { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0", fontSize: 32 } },
-      { name: "Xiaomi",    Icon: SiXiaomi,   iconStyle: { color: "#FF6900", fontSize: 32 } },
-      { name: "Invisalign",         abbr: "IV",  bg: "#007DB8", fg: "#fff" },
-      { name: "HP",        Icon: SiHp,       iconStyle: { color: "#0096D6", fontSize: 32 } },
-      { name: "D'decor",            abbr: "DD",  bg: "#003366", fg: "#fff" },
-      { name: "Yasham",             abbr: "YA",  bg: "#5C2D91", fg: "#fff" },
-      { name: "Ashtech",            abbr: "AT",  bg: "#2E7D32", fg: "#fff" },
+      { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0" } },
+      { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" } },
+      { name: "HP", Icon: SiHp, iconStyle: { color: "#0096D6" } },
+      { name: "Schneider Electric", Icon: SchneiderElectricIcon },
+      { name: "Saint Gobain", Icon: SaintGobainIcon },
+      { name: "Ajanta Pharma", Icon: AjantaPharmaIcon },
+      { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
+      { name: "Pidilite Industries", Icon: PidiliteIcon },
+      { name: "Invisalign", Icon: InvisalignIcon },
+      { name: "D'decor", Icon: DdecorIcon },
+      { name: "Yasham", Icon: YashamIcon },
+      { name: "Ashtech", Icon: AshtechIcon },
     ],
   },
   {
     label: "BFSI",
+    icon: Landmark,
     accentClass: "text-accent",
     clients: [
-      { name: "ICICI Bank",              abbr: "ICICI", bg: "#F96922", fg: "#fff" },
-      { name: "IDBI Bank",               abbr: "IDBI",  bg: "#CC0000", fg: "#fff" },
-      { name: "Bank of Baroda",          abbr: "BOB",   bg: "#F26522", fg: "#fff" },
-      { name: "IOB",                     abbr: "IOB",   bg: "#003087", fg: "#fff" },
-      { name: "IIFL",                    abbr: "IIFL",  bg: "#E8191D", fg: "#fff" },
-      { name: "Axis Bank",               abbr: "AXIS",  bg: "#970022", fg: "#fff" },
-      { name: "Yes Bank",                abbr: "YES",   bg: "#0B3D91", fg: "#fff" },
-      { name: "Citibank",                abbr: "CITI",  bg: "#003B70", fg: "#fff" },
-      { name: "CSB Bank",                abbr: "CSB",   bg: "#005AAB", fg: "#fff" },
-      { name: "Corporation Bank",        abbr: "CORP",  bg: "#003B5C", fg: "#fff" },
-      { name: "Sampath Bank",            abbr: "SB",    bg: "#1B3F8A", fg: "#fff" },
-      { name: "Bank of Ceylon",          abbr: "BOC",   bg: "#003F7F", fg: "#fff" },
-      { name: "Julius Baer",             abbr: "JB",    bg: "#1A1A1A", fg: "#C9A055" },
-      { name: "HDFC Bank",               abbr: "HDFC",  bg: "#004C8F", fg: "#fff" },
-      { name: "Birla Sunlife Insurance", abbr: "BSL",   bg: "#E63027", fg: "#fff" },
-      { name: "Max Life Insurance",      abbr: "MAX",   bg: "#EE1C25", fg: "#fff" },
-      { name: "LIC",                     abbr: "LIC",   bg: "#004B87", fg: "#FFD700" },
-      { name: "Mastercard", Icon: SiMastercard, iconStyle: { color: "#EB001B", fontSize: 36 } },
-      { name: "Kotak Group",             abbr: "KG",    bg: "#EF4B23", fg: "#fff" },
-      { name: "Nation Trust Bank",       abbr: "NTB",   bg: "#1B4A8A", fg: "#fff" },
+      { name: "Mastercard", Icon: SiMastercard, iconStyle: { color: "#EB001B" } },
+      { name: "Citibank", Icon: CitiIcon },
+      { name: "ICICI Bank", Icon: IciciBankIcon },
+      { name: "IDBI Bank", Icon: IdbiBankIcon },
+      { name: "Bank of Baroda", Icon: BankOfBarodaIcon },
+      { name: "IOB", Icon: IobIcon },
+      { name: "IIFL", Icon: IiflIcon },
+      { name: "Axis Bank", Icon: AxisBankIcon },
+      { name: "Yes Bank", Icon: YesBankIcon },
+      { name: "CSB Bank", Icon: CsbBankIcon },
+      { name: "Corporation Bank", Icon: CorporationBankIcon },
+      { name: "Sampath Bank", Icon: SampathBankIcon },
+      { name: "Bank of Ceylon", Icon: BankOfCeylonIcon },
+      { name: "Julius Baer", Icon: JuliusBaerIcon },
+      { name: "HDFC Bank", Icon: HdfcBankIcon },
+      { name: "Birla Sunlife Insurance", Icon: BirlaSunlifeIcon },
+      { name: "Max Life Insurance", Icon: MaxLifeIcon },
+      { name: "LIC", Icon: LicIcon },
+      { name: "Kotak Group", Icon: KotakBankIcon },
+      { name: "Nation Trust Bank", Icon: NationTrustIcon },
     ],
   },
   {
     label: "IT & Technology",
+    icon: Globe2,
     accentClass: "text-primary",
     clients: [
-      { name: "Tech Mahindra",     abbr: "TM",   bg: "#BE0000", fg: "#fff" },
-      { name: "LTIMindtree",       abbr: "LTI",  bg: "#00813E", fg: "#fff" },
-      { name: "Next Gen",          abbr: "NG",   bg: "#0082C8", fg: "#fff" },
-      { name: "Eurofins",          abbr: "EF",   bg: "#009A44", fg: "#fff" },
-      { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57", fontSize: 32 } },
-      { name: "TCS",               abbr: "TCS",  bg: "#0057A8", fg: "#fff" },
-      { name: "Zensar Technologies",abbr: "ZEN", bg: "#003087", fg: "#fff" },
-      { name: "Mphasis",           abbr: "MPH",  bg: "#D7242A", fg: "#fff" },
-      { name: "Genesis",           abbr: "GEN",  bg: "#0063A3", fg: "#fff" },
-      { name: "Hexaware",          abbr: "HEX",  bg: "#E31837", fg: "#fff" },
-      { name: "CleverTap",         abbr: "CT",   bg: "#FF6900", fg: "#fff" },
+      { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57" } },
+      { name: "Tata Group", Icon: SiTata, iconStyle: { color: "#004B87" } },
+      { name: "Tech Mahindra", Icon: TechMahindraIcon },
+      { name: "LTIMindtree", Icon: LtiMindtreeIcon },
+      { name: "Next Gen", Icon: NextGenIcon },
+      { name: "Eurofins", Icon: EurofinsIcon },
+      { name: "TCS", Icon: SiTcs, iconStyle: { color: "#0057A8" } },
+      { name: "Zensar Technologies", Icon: ZensarIcon },
+      { name: "Mphasis", Icon: MphasisIcon },
+      { name: "Genesis", Icon: GenesisIcon },
+      { name: "Hexaware", Icon: HexawareIcon },
+      { name: "CleverTap", Icon: ClevertapIcon },
     ],
   },
   {
     label: "Logistics & Supply Chain",
+    icon: Briefcase,
     accentClass: "text-accent",
     clients: [
-      { name: "DHL", Icon: SiDhl, iconStyle: { color: "#CC0000", fontSize: 42 } },
-      { name: "Foodland",          abbr: "FL",   bg: "#2E7D32", fg: "#fff" },
-      { name: "Mahindra & Mahindra",abbr: "M&M", bg: "#BE0000", fg: "#fff" },
+      { name: "DHL", Icon: SiDhl, iconStyle: { color: "#CC0000" } },
+      { name: "Foodland", Icon: FoodlandIcon },
+      { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
     ],
   },
 ];
 
-function initAbbr(name: string) {
-  return name
+function initAbbr(name: string, abbr?: string) {
+  return abbr || name
     .split(/[\s&]+/)
     .filter(Boolean)
     .map((w) => w[0])
@@ -108,8 +158,7 @@ function initAbbr(name: string) {
 }
 
 function ClientCard({ client, index }: { client: Client; index: number }) {
-  const { name, abbr, bg, fg, Icon, iconStyle } = client;
-  const display = abbr ?? initAbbr(name);
+  const { name, Icon, iconStyle, abbr } = client;
 
   return (
     <motion.div
@@ -122,17 +171,21 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       style={{ minHeight: 104 }}
     >
       {Icon ? (
-        <Icon style={iconStyle} className="shrink-0" />
+        <Icon
+          style={{
+            height: 48,
+            width: 48,
+            objectFit: "contain",
+            ...iconStyle,
+          }}
+        />
       ) : (
         <div
           className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 shadow-sm"
-          style={{ backgroundColor: bg ?? "#7B1532" }}
+          style={{ backgroundColor: "#70162C" }}
         >
-          <span
-            className="font-bold text-[10px] leading-none tracking-wide text-center"
-            style={{ color: fg ?? "#fff" }}
-          >
-            {display}
+          <span className="font-bold text-[10px] leading-none tracking-wide text-center text-white">
+            {initAbbr(name, abbr)}
           </span>
         </div>
       )}
@@ -152,7 +205,7 @@ export default function Clients() {
       <section className="relative py-32 bg-foreground overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: "radial-gradient(ellipse at 60% 40%, #C9A055 0%, transparent 60%)" }}
+          style={{ backgroundImage: "radial-gradient(ellipse at 60% 40%, #D4AF37 0%, transparent 60%)" }}
         />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
@@ -182,6 +235,20 @@ export default function Clients() {
                 <div className="text-sm text-white/70 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image showcase */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+              <img src={clientImg1} alt="Corporate partnership" className="w-full h-72 object-cover rounded-xl shadow-md" />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
+              <img src={clientImg2} alt="Leadership summit" className="w-full h-72 object-cover rounded-xl shadow-md" />
+            </motion.div>
           </div>
         </div>
       </section>

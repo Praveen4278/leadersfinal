@@ -72,14 +72,41 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    setSubmitted(true);
-    toast({
-      title: "Message sent",
-      description: "Thank you for reaching out. We'll be in touch shortly.",
-    });
-    form.reset();
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const formData = new FormData();
+      Object.keys(data).forEach(key => formData.append(key, data[key as keyof ContactFormData]));
+
+      const response = await fetch("https://formspree.io/f/mnjyobdw", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. We'll be in touch shortly.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Formspree error");
+      }
+    } catch (error) {
+      // Fallback to mailto if Formspree fails!
+      const subject = encodeURIComponent(`Contact from ${data.firstName} ${data.lastName} - ${data.organisation}`);
+      const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nOrganisation: ${data.organisation}\nRole: ${data.role}\n\nMessage:\n${data.message}`);
+      window.location.href = `mailto:shweta.leadersinlipstick@gmail.com?subject=${subject}&body=${body}`;
+      setSubmitted(true);
+      toast({
+        title: "Opening email client",
+        description: "Automatic sending failed, opening your email client instead.",
+      });
+      form.reset();
+    }
   };
 
   return (

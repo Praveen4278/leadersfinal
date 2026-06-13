@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, Star, Globe, Heart, Lightbulb, Users } from "lucide-react";
-import rejiImg from "@assets/WhatsApp_Image_2026-06-12_at_22.58.02_1781323608679.jpeg";
-import shwetaImg from "@assets/WhatsApp_Image_2026-06-12_at_22.58.06_1781323608680.jpeg";
+import sijiImg from "@assets/siji varghese.jpeg";
+import vandanaImg from "@assets/vandhana sachdev.jpeg";
+import ajitImg from "@assets/ajit.jpeg";
+import rejiImg from "@assets/reji samuel.jpeg";
+import shwetaImg from "@assets/shwetha.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -39,6 +42,48 @@ const values = [
 
 const team = [
   {
+    name: "Siji Varghese",
+    title: "Founder & Chief Visionary Officer",
+    img: sijiImg,
+    quote: "Transforming leadership, one woman at a time.",
+    bio: "Siji Varghese is an internationally recognized leadership expert, TEDx speaker, executive coach, and transformational facilitator with over 28 years of experience in leadership development, organizational transformation, and people empowerment. As the Founder of Leaders in Lipstick®, she has inspired more than 85,000 professionals globally through 1,200+ workshops, keynote sessions, and coaching engagements.",
+    credentials: [
+      "Four-time TEDx Speaker",
+      "Karmaveer Chakra Award Recipient",
+      "International WEE Rising Women Award",
+      "Global Women in Leadership Award",
+    ],
+    global: "Global Stages",
+  },
+  {
+    name: "Vandana Sachdeva",
+    title: "Brand Strategy Head & AI Transformation Advisor",
+    img: vandanaImg,
+    quote: "Bridging AI and human potential for future-ready leaders.",
+    bio: "Vandana Sachdeva is a seasoned business leader, AI adoption strategist, and corporate relations expert with over 15 years of experience across fintech, governance, brand strategy, and organizational transformation. She specializes in bridging artificial intelligence with real-world business applications, enabling organizations to accelerate decision-making, improve productivity, and drive measurable business outcomes.",
+    credentials: [
+      "AI Workflow Integration Specialist",
+      "Prompt Engineering Expert",
+      "Executive Presence Coach",
+      "Podcast Host & Ecosystem Builder",
+    ],
+    global: "India · International",
+  },
+  {
+    name: "Prof. Ajit Vishwakarma",
+    title: "Chief Learning Officer & Chief Data Scientist",
+    img: ajitImg,
+    quote: "Learning is the currency of the future.",
+    bio: "Prof. Ajit Vishwakarma is an internationally acclaimed organizational growth strategist, Industrial Psychologist, Chief Data Scientist, Generative AI specialist, and Master Trainer with over 15 years of experience in corporate learning, leadership development, and technology transformation. He has trained more than 500,000 professionals across industries and conducted over 15,000 learning sessions globally.",
+    credentials: [
+      "Government of India Certified Lead Assessor",
+      "Subject Matter Expert",
+      "Mentored Government Bodies: Indian Army, MeitY, RBI, NSDC",
+      "Worked with 150+ leading organizations including Microsoft, Deloitte, IBM, Infosys, JP Morgan",
+    ],
+    global: "India · Global",
+  },
+  {
     name: "Reji Samuel",
     title: "International Keynote Speaker | Transformation Strategist | Education Visionary",
     img: rejiImg,
@@ -74,7 +119,7 @@ export default function About() {
     <div className="w-full">
       {/* Hero */}
       <section className="relative py-32 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #C9A055 0%, transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, #D4AF37 0%, transparent 60%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
@@ -194,7 +239,7 @@ export default function About() {
             <h2 className="font-serif text-4xl font-bold text-white">Meet the Team</h2>
             <p className="text-white/70 mt-4 max-w-xl mx-auto">The people who built Leaders in Lipstick® — and continue to shape it.</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {team.map((member, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 40 }}
@@ -202,8 +247,8 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-                <div className="h-72 overflow-hidden">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="p-8">
                   <div className="text-accent font-serif text-4xl mb-2">"</div>

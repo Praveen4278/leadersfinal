@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { Lightbox } from "@/components/ui/lightbox";
 
 import img1 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.03_1781323608680.jpeg";
 import img2 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.04_1781323608680.jpeg";
@@ -14,6 +15,18 @@ import img9 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.12_(1)_178132360868
 import img10 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.12_(2)_1781323608682.jpeg";
 import img11 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.12_1781323608682.jpeg";
 import img12 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.13_1781323608682.jpeg";
+import workshop1 from "@assets/worksop1.jpeg";
+import workshop2 from "@assets/worksop2.jpeg";
+import new1 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09 (1).jpeg";
+import new2 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09 (2).jpeg";
+import new3 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09.jpeg";
+import new4 from "@assets/WhatsApp Image 2026-06-13 at 12.11.10.jpeg";
+import new5 from "@assets/WhatsApp Image 2026-06-13 at 12.11.39 (1).jpeg";
+import new6 from "@assets/WhatsApp Image 2026-06-13 at 12.11.39 (2).jpeg";
+import new7 from "@assets/WhatsApp Image 2026-06-13 at 12.11.39.jpeg";
+import new8 from "@assets/WhatsApp Image 2026-06-13 at 12.11.40 (1).jpeg";
+import new9 from "@assets/WhatsApp Image 2026-06-13 at 12.11.40 (2).jpeg";
+import new10 from "@assets/WhatsApp Image 2026-06-13 at 12.11.40 (3).jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -42,14 +55,18 @@ const testimonials = [
   },
 ];
 
-const galleryImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
+const galleryImages = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, 
+  workshop1, workshop2,
+  new1, new2, new3, new4, new5, new6, new7, new8, new9, new10
+];
 
 export default function SuccessStories() {
   return (
     <div className="w-full">
       {/* Hero */}
       <section className="relative py-32 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 75% 30%, #C9A055 0%, transparent 55%)" }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 75% 30%, #D4AF37 0%, transparent 55%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
@@ -116,18 +133,18 @@ export default function SuccessStories() {
             <h2 className="font-serif text-4xl font-bold text-foreground">In the Room</h2>
             <p className="text-muted-foreground mt-4">Moments from workshops, cohorts, and leadership journeys across India and beyond.</p>
           </motion.div>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {galleryImages.map((img, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-                className="break-inside-avoid overflow-hidden rounded-xl">
-                <img
-                  src={img}
-                  alt={`Leaders in Lipstick workshop ${i + 1}`}
-                  className="w-full object-cover hover:scale-105 transition-transform duration-500 rounded-xl"
+                transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}>
+                <Lightbox 
+                  src={img} 
+                  alt={`Leaders in Lipstick workshop ${i + 1}`} 
+                  className="aspect-[3/4]" 
+                  imgClassName="w-full h-full object-cover rounded-xl" 
                 />
               </motion.div>
             ))}
@@ -136,7 +153,7 @@ export default function SuccessStories() {
       </section>
 
       {/* Pull quote */}
-      <section className="py-24 bg-primary">
+      <section className="py-24 bg-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
             <div className="text-accent font-serif text-8xl leading-none mb-6">"</div>
@@ -149,11 +166,11 @@ export default function SuccessStories() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-background text-center">
+      <section className="py-28 bg-foreground text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-foreground mb-6">Write your own success story.</h2>
-          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-4xl font-bold text-white mb-6">Write your own success story.</h2>
+          <p className="text-white/70 mb-10 max-w-xl mx-auto">
             Find out which programme is right for you — or explore a corporate partnership that delivers measurable impact.
           </p>
           <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-md bg-primary px-10 text-base font-medium text-white shadow transition-colors hover:bg-primary/90">

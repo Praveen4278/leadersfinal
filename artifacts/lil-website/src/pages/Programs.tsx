@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, Users, Video, Building2, Mountain } from "lucide-react";
+import programImg1 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09 (1).jpeg";
+import programImg2 from "@assets/WhatsApp Image 2026-06-13 at 12.11.09 (2).jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -94,7 +96,7 @@ export default function Programs() {
     <div className="w-full">
       {/* Hero */}
       <section className="relative py-32 bg-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 30% 60%, #C9A055 0%, transparent 50%)" }} />
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 30% 60%, #D4AF37 0%, transparent 50%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
@@ -114,6 +116,17 @@ export default function Programs() {
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-serif text-3xl font-bold text-foreground">How We Deliver</h2>
           </motion.div>
+          
+          {/* Image showcase */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+              <img src={programImg1} alt="Workshop in action" className="w-full h-72 object-cover rounded-xl shadow-md" />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
+              <img src={programImg2} alt="Group activity" className="w-full h-72 object-cover rounded-xl shadow-md" />
+            </motion.div>
+          </div>
+          
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {deliveryFormats.map((format, i) => (
               <motion.div key={i}

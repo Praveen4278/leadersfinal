@@ -53,7 +53,7 @@ export default function AITraining() {
     <div className="w-full">
       {/* Hero */}
       <section className="relative py-32 bg-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(ellipse at 80% 40%, #C9A055 0%, transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(ellipse at 80% 40%, #D4AF37 0%, transparent 60%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative max-w-6xl">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 text-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
