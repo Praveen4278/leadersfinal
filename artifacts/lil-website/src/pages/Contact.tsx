@@ -26,14 +26,14 @@ const contactOptions = [
   {
     icon: Mail,
     label: "General Enquiries",
-    value: "hello@leadersinlipstick.com",
-    link: "mailto:hello@leadersinlipstick.com",
+    value: "hello@leadersinlipstick.in",
+    link: "mailto:hello@leadersinlipstick.in",
   },
   {
     icon: Mail,
     label: "Corporate Partnerships",
-    value: "partnerships@leadersinlipstick.com",
-    link: "mailto:partnerships@leadersinlipstick.com",
+    value: "partnerships@leadersinlipstick.in",
+    link: "mailto:partnerships@leadersinlipstick.in",
   },
   {
     icon: Linkedin,
@@ -99,7 +99,7 @@ export default function Contact() {
       // Fallback to mailto if Formspree fails!
       const subject = encodeURIComponent(`Contact from ${data.firstName} ${data.lastName} - ${data.organisation}`);
       const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nOrganisation: ${data.organisation}\nRole: ${data.role}\n\nMessage:\n${data.message}`);
-      window.location.href = `mailto:hello@leadersinlipstick.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@leadersinlipstick.in?subject=${subject}&body=${body}`;
       setSubmitted(true);
       toast({
         title: "Opening email client",

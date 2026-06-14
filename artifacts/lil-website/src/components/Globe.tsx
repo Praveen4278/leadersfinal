@@ -104,8 +104,7 @@ export default function InteractiveGlobe() {
         showAtmosphere={true}
         atmosphereColor="#C9A055"
         atmosphereAltitude={0.15}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-        bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-day.jpg"
         onGlobeReady={() => setIsLoaded(true)}
         pointsData={locationsData}
         pointLat="lat"

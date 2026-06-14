@@ -174,7 +174,7 @@ export default function Home() {
       <section className="py-0 bg-white">
         <div className="grid md:grid-cols-2 min-h-[80vh]">
           {/* Left column */}
-          <div className="flex flex-col justify-between p-10 lg:p-16 border-r border-border">
+          <div className="flex flex-col justify-between p-10 lg:p-16 border-b md:border-b-0 md:border-r border-border">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -185,12 +185,27 @@ export default function Home() {
                 Designed for women...
               </h2>
             </motion.div>
+            {/* Mobile-only Image (eventImg2 - women image) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8"
+              className="mt-8 block md:hidden"
+            >
+              <img
+                src={eventImg2}
+                alt="Impact session"
+                className="w-full h-72 md:h-80 object-cover"
+              />
+            </motion.div>
+            {/* Desktop-only Image (eventImg1 - next image) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-8 hidden md:block"
             >
               <img
                 src={eventImg1}
@@ -202,11 +217,13 @@ export default function Home() {
 
           {/* Right column */}
           <div className="flex flex-col justify-between p-10 lg:p-16">
+            {/* Desktop-only Image (eventImg2 - women image) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="hidden md:block"
             >
               <img
                 src={eventImg2}
@@ -219,7 +236,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-8"
+              className="mt-8 md:mt-0"
             >
               <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-6">
                 ...built for impact
@@ -230,6 +247,20 @@ export default function Home() {
               <Link href="/about" className="inline-flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-wider hover:gap-4 transition-all duration-300">
                 Learn More <ArrowRight className="h-4 w-4" />
               </Link>
+            </motion.div>
+            {/* Mobile-only Image (eventImg1 - next image) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-8 block md:hidden"
+            >
+              <img
+                src={eventImg1}
+                alt="Leadership workshop"
+                className="w-full h-72 md:h-80 object-cover"
+              />
             </motion.div>
           </div>
         </div>
