@@ -6,6 +6,7 @@ import vandanaImg from "@assets/vandhana sachdev.jpeg";
 import ajitImg from "@assets/ajit.jpeg";
 import rejiImg from "@assets/reji samuel.jpeg";
 import shwetaImg from "@assets/shwetha.jpeg";
+import deepaImg from "@assets/deepa.png.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -115,6 +116,18 @@ const team = [
     ],
     global: "Mumbai, India · International Stages",
     linkedin: "https://www.linkedin.com/in/shweta-b-792836a5/",
+  },
+  {
+    name: "Deepa",
+    title: "Team Member",
+    img: deepaImg,
+    quote: "Empowering leaders, one step at a time.",
+    bio: "Deepa is a dedicated professional committed to supporting the Leaders in Lipstick mission of transforming leadership globally.",
+    credentials: [
+      "Leadership Development Expert",
+      "Community Builder",
+    ],
+    global: "Global",
   },
 ];
 

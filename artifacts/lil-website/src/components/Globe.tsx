@@ -128,37 +128,41 @@ export default function InteractiveGlobe() {
       <AnimatePresence>
         {selectedLocation && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white border border-[#C9A055]/40 shadow-2xl p-6 w-[280px] sm:min-w-[320px] rounded-xl pointer-events-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 pointer-events-auto"
           >
-            <button
-              onClick={() => setSelectedLocation(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-[#70162C] transition-colors"
+            <motion.div
+              className="relative bg-white border border-[#C9A055]/40 shadow-2xl p-6 w-full max-w-sm rounded-xl"
             >
-              <X className="w-4 h-4" />
-            </button>
-            <h3 className="font-serif text-xl font-bold text-[#70162C] mb-4 pr-6">
-              {selectedLocation.name}
-            </h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center border-b border-[#C9A055]/20 pb-2">
-                <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Members</span>
-                <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.members}</span>
+              <button
+                onClick={() => setSelectedLocation(null)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-[#70162C] transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              <h3 className="font-serif text-xl font-bold text-[#70162C] mb-4 pr-6">
+                {selectedLocation.name}
+              </h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center border-b border-[#C9A055]/20 pb-2">
+                  <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Members</span>
+                  <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.members}</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-[#C9A055]/20 pb-2">
+                  <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Annual Events</span>
+                  <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.events}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Network Revenue</span>
+                  <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.rev}</span>
+                </div>
               </div>
-              <div className="flex justify-between items-center border-b border-[#C9A055]/20 pb-2">
-                <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Annual Events</span>
-                <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.events}</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-xs uppercase tracking-widest text-gray-600 font-bold">Network Revenue</span>
-                <span className="font-serif text-lg text-[#70162C] font-bold">{selectedLocation.rev}</span>
-              </div>
-            </div>
-            <button className="w-full mt-6 bg-[#C9A055] hover:bg-[#b8914a] text-[#70162C] py-3 text-sm font-bold uppercase tracking-wider transition-colors">
-              View Members
-            </button>
+              <button className="w-full mt-6 bg-[#C9A055] hover:bg-[#b8914a] text-[#70162C] py-3 text-sm font-bold uppercase tracking-wider transition-colors">
+                View Members
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
