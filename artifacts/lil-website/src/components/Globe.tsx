@@ -49,7 +49,7 @@ const locationsData = [
 ];
 
 export default function InteractiveGlobe() {
-  const globeEl = useRef<any>();
+  const globeEl = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedLocation, setSelectedLocation] = useState<any | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);

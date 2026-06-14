@@ -75,10 +75,10 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-6">
               Down Memory Lane
             </h1>
-            <p className="text-xl text-white/80">
+            <p className="text-sm sm:text-base md:text-lg text-white/80">
               Every number behind our impact is a leader who chose to invest in herself — and an organisation that chose to invest in her.
             </p>
           </motion.div>
@@ -95,8 +95,8 @@ export default function SuccessStories() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}>
-                <div className="font-serif text-6xl md:text-7xl font-bold text-accent mb-2">{stat.num}</div>
-                <div className="text-sm text-white/70 uppercase tracking-widest font-medium">{stat.label}</div>
+                <div className="font-serif text-4xl md:text-7xl font-bold text-accent mb-2">{stat.num}</div>
+                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-widest font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -108,7 +108,7 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">What Leaders Say</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">What Leaders Say</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
@@ -117,9 +117,9 @@ export default function SuccessStories() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
-                className="bg-muted rounded-2xl p-10 border border-border flex flex-col">
+                className="bg-muted rounded-2xl p-6 md:p-10 border border-border flex flex-col">
                 <div className="text-accent font-serif text-6xl leading-none mb-6">"</div>
-                <p className="font-serif text-lg italic text-foreground leading-relaxed flex-1 mb-8">{t.quote}</p>
+                <p className="font-serif text-base md:text-lg italic text-foreground leading-relaxed flex-1 mb-6 md:mb-8">{t.quote}</p>
                 <div className="pt-6 border-t border-border">
                   <div className="w-8 h-0.5 bg-accent mb-3" />
                   <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">— {t.who}</p>
@@ -135,7 +135,7 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-14">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Beyond Training — Building Lasting Memories</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Beyond Training — Building Lasting Memories</h2>
             <p className="text-muted-foreground mt-4">Moments from workshops, cohorts, and leadership journeys across India and beyond.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -162,7 +162,7 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Our Global Footprint</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Our Global Footprint</h2>
             <p className="text-muted-foreground mt-4">Empowering leaders across continents.</p>
           </motion.div>
           <Globe />
@@ -174,7 +174,7 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
             <div className="text-accent font-serif text-8xl leading-none mb-6">"</div>
-            <p className="font-serif text-3xl md:text-4xl italic text-white leading-relaxed mb-10">
+            <p className="font-serif text-xl sm:text-2xl md:text-4xl italic text-white leading-relaxed mb-6 md:mb-10">
               68% of Leaders in Lipstick® participants secure a promotion or expanded role within 18 months of completing their programme.
             </p>
             <p className="text-white/60 text-sm uppercase tracking-widest">Leaders in Lipstick® Impact Data, 2025</p>
@@ -186,11 +186,11 @@ export default function SuccessStories() {
       <section className="py-28 bg-foreground text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-white mb-6">Write your own success story.</h2>
-          <p className="text-white/70 mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">Write your own success story.</h2>
+          <p className="text-white/70 text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Find out which programme is right for you — or explore a corporate partnership that delivers measurable impact.
           </p>
-          <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-md bg-primary px-10 text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
+          <Link href="/contact" className="inline-flex h-12 md:h-14 items-center justify-center rounded-md bg-primary px-8 md:px-10 text-sm md:text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
             Get Started <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </motion.div>

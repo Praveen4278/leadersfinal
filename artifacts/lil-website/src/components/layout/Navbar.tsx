@@ -38,12 +38,12 @@ export function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 bg-[#70162C] border-b-4 border-[#D4AF37] shadow-lg"
     >
-      <div className="container mx-auto px-6 lg:px-12 h-32 flex items-center justify-between">
+      <div className="container mx-auto px-6 lg:px-12 h-20 md:h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 shrink-0 group">
           <img
             src={logoPath}
             alt="Leaders in Lipstick"
-            className="h-32 w-auto object-contain transition-all duration-300 group-hover:scale-110 brightness-125"
+            className="h-20 md:h-32 w-auto object-contain transition-all duration-300 group-hover:scale-110 brightness-125"
           />
         </Link>
 

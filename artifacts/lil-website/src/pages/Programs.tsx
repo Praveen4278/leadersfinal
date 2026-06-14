@@ -113,10 +113,10 @@ export default function Programs() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
               Real-world leadership capability.
             </h1>
-            <p className="text-lg text-white/75 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-2xl">
               Leadership experiences designed to build real-world capability — for women leaders, and behavioural growth for all employees.
             </p>
           </motion.div>
@@ -127,7 +127,7 @@ export default function Programs() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="font-serif text-3xl font-bold text-foreground">How We Deliver</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">How We Deliver</h2>
           </motion.div>
           
           {/* Image showcase */}
@@ -147,7 +147,7 @@ export default function Programs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center text-center p-8 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all">
+                className="flex flex-col items-center text-center p-6 md:p-8 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all">
                 <div className="h-14 w-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                   <format.icon className="h-7 w-7 text-primary" />
                 </div>
@@ -164,7 +164,7 @@ export default function Programs() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Stream 01</div>
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">Women-Only Leadership Journeys</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Women-Only Leadership Journeys</h2>
             <p className="text-muted-foreground max-w-2xl">Structured cohort programmes exclusively designed for women at every career stage — from emerging manager to boardroom ready.</p>
           </motion.div>
           <div className="space-y-8">
@@ -175,10 +175,10 @@ export default function Programs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-md border border-border">
-                <div className="p-8 md:p-10">
-                  <div className="flex flex-col md:flex-row md:items-start gap-8">
+                <div className="p-6 md:p-10">
+                  <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
                     <div className="shrink-0">
-                      <div className="font-serif text-6xl font-bold text-primary/20">{prog.num}</div>
+                      <div className="font-serif text-4xl md:text-6xl font-bold text-primary/20">{prog.num}</div>
                     </div>
                     <div className="flex-1">
                       <div className="mb-4">
@@ -209,7 +209,7 @@ export default function Programs() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-accent text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Stream 02</div>
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">All-Employee Behavioural Workshops</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">All-Employee Behavioural Workshops</h2>
             <p className="text-muted-foreground max-w-2xl">High-impact workshop modules — open to all employees, delivered to build the behaviours that drive organisational performance.</p>
           </motion.div>
 
@@ -222,7 +222,7 @@ export default function Programs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               >
-                <h3 className="font-serif text-2xl font-bold text-primary mb-6">{category}</h3>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">{category}</h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {workshops.map((ws, i) => (
                     <motion.div
@@ -250,7 +250,7 @@ export default function Programs() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-white">Our 4-Stage Journey Methodology</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white">Our 4-Stage Journey Methodology</h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {methodology.map((m, i) => (
@@ -260,8 +260,8 @@ export default function Programs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
                 className="text-center">
-                <div className="font-serif text-6xl font-bold text-accent/30 mb-2">{m.step}</div>
-                <h3 className="font-serif text-2xl font-bold text-white mb-3">{m.title}</h3>
+                <div className="font-serif text-4xl md:text-6xl font-bold text-accent/30 mb-2">{m.step}</div>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-white mb-3">{m.title}</h3>
                 <div className="w-8 h-0.5 bg-accent mx-auto mb-4" />
                 <p className="text-white/70 text-sm leading-relaxed">{m.desc}</p>
               </motion.div>
@@ -274,11 +274,11 @@ export default function Programs() {
       <section className="py-24 bg-background text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-foreground mb-6">Let's co-design your programme</h2>
-          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Let's co-design your programme</h2>
+          <p className="text-muted-foreground text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Every great leadership programme starts with a conversation. Tell us about your team, your goals, and your timeline.
           </p>
-          <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-md bg-primary px-10 text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
+          <Link href="/contact" className="inline-flex h-12 md:h-14 items-center justify-center rounded-md bg-primary px-8 md:px-10 text-sm md:text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
             Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </motion.div>

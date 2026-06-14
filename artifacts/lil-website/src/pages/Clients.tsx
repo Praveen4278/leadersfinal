@@ -167,24 +167,21 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
-      className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group"
-      style={{ minHeight: 160 }}
+      className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group min-h-[110px] md:min-h-[160px]"
     >
       {Icon ? (
         <Icon
+          className="h-20 w-20 md:h-28 md:w-28 object-contain transition-all duration-300"
           style={{
-            height: 120,
-            width: 120,
-            objectFit: "contain",
             ...iconStyle,
           }}
         />
       ) : (
         <div
-          className="w-28 h-28 rounded-lg flex items-center justify-center shrink-0"
+          className="w-20 h-20 md:w-28 md:h-28 rounded-lg flex items-center justify-center shrink-0"
           style={{ backgroundColor: "#70162C" }}
         >
-          <span className="font-bold text-[20px] leading-none tracking-wide text-center text-white">
+          <span className="font-bold text-[14px] md:text-[20px] leading-none tracking-wide text-center text-white">
             {initAbbr(name, abbr)}
           </span>
         </div>
@@ -210,10 +207,10 @@ export default function Clients() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-6">
               Built in Partnership. Scaled Through Trust.
             </h1>
-            <p className="text-xl text-white/75 max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-3xl">
               A growing list of organisations that invest in inclusive leadership — and choose Leaders in Lipstick® to help them deliver it.
             </p>
           </motion.div>
@@ -231,8 +228,8 @@ export default function Clients() {
               { num: "2000+", label: "Leaders Trained" },
             ].map((s, i) => (
               <div key={i}>
-                <div className="font-serif text-4xl font-bold text-accent mb-1">{s.num}</div>
-                <div className="text-sm text-white/70 uppercase tracking-wider">{s.label}</div>
+                <div className="font-serif text-2xl sm:text-4xl font-bold text-accent mb-1">{s.num}</div>
+                <div className="text-xs sm:text-sm text-white/70 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
@@ -244,7 +241,7 @@ export default function Clients() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Our Clientele and Collaborators</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Our Clientele and Collaborators</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               From global multinationals to trusted Indian institutions — organisations that invest in their people choose Leaders in Lipstick®.
             </p>
@@ -259,13 +256,13 @@ export default function Clients() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: si * 0.08 }}
               >
-                <div className="flex items-center gap-6 mb-8">
-                  <div className="w-1 h-12 bg-accent rounded-full shrink-0" />
-                  <h3 className={`font-serif text-3xl font-bold ${sector.accentClass}`}>
+                <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8">
+                  <div className="w-1 h-8 md:h-12 bg-accent rounded-full shrink-0" />
+                  <h3 className={`font-serif text-xl md:text-3xl font-bold ${sector.accentClass}`}>
                     {sector.label}
                   </h3>
                 </div>
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4">
                   {sector.clients.map((client, ci) => (
                     <ClientCard key={ci} client={client} index={ci} />
                   ))}
@@ -297,7 +294,7 @@ export default function Clients() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="bg-white rounded-xl p-8 shadow-sm border border-border"
+                className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border"
               >
                 <div className="w-8 h-0.5 bg-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-bold text-foreground mb-3">{point.title}</h3>
@@ -312,13 +309,13 @@ export default function Clients() {
       <section className="py-24 bg-primary text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-white mb-6">Join the Movement</h2>
-          <p className="text-white/75 mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">Join the Movement</h2>
+          <p className="text-white/75 text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Ready to invest in leadership capability for your organisation? Let's build something that lasts.
           </p>
           <Link
             href="/contact"
-            className="inline-flex h-14 items-center justify-center rounded-md bg-white px-10 text-base font-medium text-primary shadow transition-colors hover:bg-white/90"
+            className="inline-flex h-12 md:h-14 items-center justify-center rounded-md bg-white px-8 md:px-10 text-sm md:text-base font-medium text-primary shadow transition-colors hover:bg-white/90"
           >
             Let's Build Together <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

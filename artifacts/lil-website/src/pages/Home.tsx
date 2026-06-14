@@ -139,14 +139,14 @@ export default function Home() {
             <p className="text-white/60 text-sm uppercase tracking-widest mb-6 font-medium">
               Women-centric in identity. Inclusive in impact.
             </p>
-            <h1 className="font-sans text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
+            <h1 className="font-sans text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-4">
               Lead. Influence. Transform.
             </h1>
-            <div className="font-sans text-4xl md:text-6xl font-bold text-accent leading-tight mb-8 h-16 md:h-20 flex items-center">
+            <div className="font-sans text-2xl sm:text-3xl md:text-6xl font-bold text-accent leading-tight mb-8 h-12 md:h-20 flex items-center">
               <span>{typed}</span>
               <span className="cursor-blink ml-1">|</span>
             </div>
-            <p className="text-white/80 text-base md:text-lg max-w-xl mb-10 font-light leading-relaxed">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-xl mb-10 font-light leading-relaxed">
               Bespoke leadership and behavioural training for organisations that believe human capability is the ultimate competitive advantage.
             </p>
             <div className="flex items-center gap-6 flex-wrap">
@@ -181,7 +181,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-accent leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-accent leading-tight">
                 Designed for women...
               </h2>
             </motion.div>
@@ -221,10 +221,10 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-8"
             >
-              <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-6">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-6">
                 ...built for impact
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md">
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-md">
                 Leaders in Lipstick® has spent over a decade refining the science of leadership development. We integrate behavioural psychology, emotional intelligence frameworks, and real-world application to create measurable, lasting change.
               </p>
               <Link href="/about" className="inline-flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-wider hover:gap-4 transition-all duration-300">
@@ -274,10 +274,10 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
                 Meeting your people where they are
               </h2>
-              <p className="text-muted-foreground text-base leading-relaxed max-w-md">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-md">
                 Every organisation learns differently. That is why we offer flexible, facilitator-led formats that meet your people where they are — across roles, locations, and languages.
               </p>
             </motion.div>
@@ -302,8 +302,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-3">Our Programs</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">Our Programs</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
               Designed to build real-world leadership capability, inspire performance, and create lasting organisational impact.
             </p>
           </motion.div>
@@ -317,14 +317,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`${p.bg} ${p.text} p-10 lg:p-12 flex flex-col min-h-[480px] border-r ${p.border} last:border-r-0`}
+              className={`${p.bg} ${p.text} p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col min-h-[320px] md:min-h-[480px] border-r ${p.border} last:border-r-0`}
             >
-              <div className="text-4xl mb-8 opacity-60">{p.icon}</div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 leading-tight">
+              <div className="text-3xl md:text-4xl mb-6 md:mb-8 opacity-60">{p.icon}</div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 leading-tight">
                 {p.title}
               </h3>
-              <p className="text-sm leading-relaxed opacity-80 flex-1">{p.desc}</p>
-              <Link href="/programs" className={`mt-8 inline-block border px-6 py-3 text-xs font-medium uppercase tracking-wider transition-all duration-300 ${p.btn}`}>
+              <p className="text-xs sm:text-sm leading-relaxed opacity-80 flex-1">{p.desc}</p>
+              <Link href="/programs" className={`mt-6 md:mt-8 inline-block border px-4 py-2 md:px-6 md:py-3 text-[10px] sm:text-xs font-medium uppercase tracking-wider transition-all duration-300 ${p.btn}`}>
                 Read More
               </Link>
             </motion.div>
@@ -344,8 +344,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="font-serif text-5xl md:text-6xl font-bold text-primary mb-2">{s.num}</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">{s.label}</div>
+                <div className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-2">{s.num}</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -359,11 +359,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="font-serif text-4xl font-bold text-center text-foreground mb-16"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-16"
           >
             Our Clients
           </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-12 gap-y-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 md:gap-x-12 md:gap-y-8 items-center justify-items-center">
             {clients.map((client, i) => (
               <motion.div
                 key={i}
@@ -373,20 +373,20 @@ export default function Home() {
                 transition={{ delay: i * 0.05 }}
                 className="text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
                 <client.Icon
-                  className="h-12 w-12"
+                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12"
                   style={{ color: client.color }}
                 />
               </div>
-                <p className="text-xs text-muted-foreground font-medium">{client.name}</p>
+                <p className="text-[10px] sm:text-xs text-muted-foreground font-medium">{client.name}</p>
               </motion.div>
             ))}
           </div>
           <div className="text-center mt-12">
             <Link
               href="/clients"
-              className="inline-block border border-foreground px-8 py-3 text-sm font-medium uppercase tracking-wider text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
+              className="inline-block border border-foreground px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-medium uppercase tracking-wider text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
             >
               See All Clients
             </Link>
@@ -405,7 +405,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-serif text-3xl md:text-4xl italic text-foreground leading-relaxed mb-8"
+            className="font-serif text-xl sm:text-2xl md:text-4xl italic text-foreground leading-relaxed mb-8"
           >
             Leaders in Lipstick® gave our entire organisation a shared language for leadership — and our women leaders a community to grow with.
           </motion.blockquote>
@@ -462,13 +462,13 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <p className="text-white/50 text-xs uppercase tracking-widest mb-6">Ready to invest in leadership?</p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-10">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-10">
                 Let's build something<br />
                 <span className="text-accent">extraordinary.</span>
               </h2>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 bg-primary text-white px-10 py-4 text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-primary text-white px-8 py-3 sm:px-10 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300"
               >
                 Partner With Us <ArrowUpRight className="h-4 w-4" />
               </Link>

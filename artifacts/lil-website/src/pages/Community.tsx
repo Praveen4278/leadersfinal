@@ -82,10 +82,10 @@ export default function Community() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-8">
               A Movement Built on Many Voices
             </h1>
-            <p className="text-xl text-white/80">
+            <p className="text-sm sm:text-base md:text-lg text-white/80">
               Leaders in Lipstick® is more than a training company. It's an ecosystem of professionals, organisations, and allies who believe that inclusive leadership is a competitive advantage.
             </p>
           </motion.div>
@@ -97,8 +97,8 @@ export default function Community() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Women-Centric Community</div>
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">For Women at Every Stage</h2>
-            <p className="text-muted-foreground max-w-2xl">From first job to first board seat — we meet women where they are and take them where they want to go.</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">For Women at Every Stage</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl">From first job to first board seat — we meet women where they are and take them where they want to go.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {womenAudiences.map((aud, i) => (
@@ -107,7 +107,7 @@ export default function Community() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: (i % 3) * 0.1 }}
-                className="bg-muted rounded-xl p-8 border border-border hover:border-primary hover:shadow-md transition-all group">
+                className="bg-muted rounded-xl p-6 md:p-8 border border-border hover:border-primary hover:shadow-md transition-all group">
                 <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
                   <aud.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -124,8 +124,8 @@ export default function Community() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-accent text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Organisational Partners</div>
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">Corporate & Organisational Clients</h2>
-            <p className="text-muted-foreground max-w-2xl">Organisations that partner with us don't just buy training. They invest in a measurable, lasting shift in leadership capability.</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Corporate & Organisational Clients</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl">Organisations that partner with us don't just buy training. They invest in a measurable, lasting shift in leadership capability.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {corporateAudiences.map((aud, i) => (
@@ -134,7 +134,7 @@ export default function Community() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="bg-white rounded-2xl p-10 shadow-md border border-border text-center">
+                className="bg-white rounded-2xl p-6 md:p-10 shadow-md border border-border text-center">
                 <div className="h-16 w-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <aud.icon className="h-8 w-8 text-white" />
                 </div>
@@ -151,8 +151,8 @@ export default function Community() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="w-12 h-1 bg-accent mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-white mb-4">Strategic Allies & Ecosystem Partners</h2>
-            <p className="text-white/70 max-w-2xl">A movement needs more than participants. It needs champions.</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Strategic Allies & Ecosystem Partners</h2>
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl">A movement needs more than participants. It needs champions.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {allies.map((ally, i) => (
@@ -176,15 +176,15 @@ export default function Community() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center">
             <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-8">Why This Mix Matters</h2>
-            <div className="bg-muted rounded-2xl p-10 border-l-4 border-primary text-left max-w-3xl mx-auto">
-              <p className="font-serif text-xl italic text-primary mb-6">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 md:mb-8">Why This Mix Matters</h2>
+            <div className="bg-muted rounded-2xl p-6 md:p-10 border-l-4 border-primary text-left max-w-3xl mx-auto">
+              <p className="font-serif text-lg md:text-xl italic text-primary mb-4 md:mb-6">
                 "Inclusion doesn't happen in silos. When women develop alongside their organisations — with the support of allies, the backing of HR, and the engagement of leadership — the impact compounds."
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                 Our community is deliberately cross-functional and cross-level. When an emerging leader is in the same ecosystem as a CHRO, a board-ready executive, and a policy voice — the conversations get richer, the networks get stronger, and the outcomes get bigger.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 That's what Leaders in Lipstick® is building: not just better-trained individuals, but better-led organisations — and a better-represented world.
               </p>
             </div>
@@ -196,11 +196,11 @@ export default function Community() {
       <section className="py-24 bg-primary text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-white mb-6">Find Your Place in This Movement</h2>
-          <p className="text-white/75 mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">Find Your Place in This Movement</h2>
+          <p className="text-white/75 text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Whether you're a woman leader, an HR professional, or an organisation ready to invest — there is a seat for you here.
           </p>
-          <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-md bg-white px-10 text-base font-medium text-primary shadow transition-colors hover:bg-white/90">
+          <Link href="/contact" className="inline-flex h-12 md:h-14 items-center justify-center rounded-md bg-white px-8 md:px-10 text-sm md:text-base font-medium text-primary shadow transition-colors hover:bg-white/90">
             Get Involved <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </motion.div>

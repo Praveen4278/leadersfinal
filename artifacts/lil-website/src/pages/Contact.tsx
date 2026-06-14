@@ -117,10 +117,10 @@ export default function Contact() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-6">
               Let's Start a Conversation
             </h1>
-            <p className="text-xl text-white/80 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl">
               Whether you're ready to enrol in a programme, explore a corporate partnership, or simply learn more — we'd love to hear from you.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ export default function Contact() {
               initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}
               className="md:col-span-2">
               <div className="w-12 h-1 bg-accent mb-8" />
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Reach Us</h2>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8">Reach Us</h2>
               <div className="space-y-6">
                 {contactOptions.map((opt, i) => (
                   <motion.a key={i} href={opt.link} target="_blank" rel="noreferrer"
@@ -280,7 +280,7 @@ export default function Contact() {
                     type="submit"
                     data-testid="button-submit"
                     disabled={form.formState.isSubmitting}
-                    className="w-full h-14 inline-flex items-center justify-center rounded-lg bg-primary text-white text-base font-medium shadow transition-colors hover:bg-primary/90 disabled:opacity-50">
+                    className="w-full h-12 md:h-14 inline-flex items-center justify-center rounded-lg bg-primary text-white text-sm md:text-base font-medium shadow transition-colors hover:bg-primary/90 disabled:opacity-50">
                     Send Message <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
                 </form>

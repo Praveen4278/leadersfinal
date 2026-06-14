@@ -60,10 +60,10 @@ export default function AITraining() {
               <Brain className="h-4 w-4" />
               AI Training
             </div>
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-8">
               AI is a leadership decision.
             </h1>
-            <p className="text-lg text-white/75 max-w-3xl">
+            <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-3xl">
               Artificial Intelligence is no longer a technology decision — it is a leadership decision. Leaders who don't understand AI cannot govern it. Organisations that don't invest in AI literacy will fall behind those that do.
             </p>
           </motion.div>
@@ -75,12 +75,12 @@ export default function AITraining() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-14">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Two Tracks. One Goal.</h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">AI fluency at every level of your organisation — from the boardroom to the frontline.</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Two Tracks. One Goal.</h2>
+            <p className="text-muted-foreground text-sm sm:text-base mt-2 md:mt-4 max-w-xl mx-auto">AI fluency at every level of your organisation — from the boardroom to the frontline.</p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-              className="bg-primary rounded-2xl p-10 text-white">
+              className="bg-primary rounded-2xl p-6 md:p-10 text-white">
               <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-6">
                 <Shield className="h-6 w-6 text-white" />
               </div>
@@ -89,7 +89,7 @@ export default function AITraining() {
               <p className="text-white/80 leading-relaxed">For C-suite executives, senior leaders, board members, and HR/L&D heads who need to understand, govern, and champion AI adoption — without becoming technologists.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-muted rounded-2xl p-10 border border-border">
+              className="bg-muted rounded-2xl p-6 md:p-10 border border-border">
               <div className="bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center mb-6">
                 <Code2 className="h-6 w-6 text-accent" />
               </div>
@@ -106,7 +106,7 @@ export default function AITraining() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-14">
             <div className="w-12 h-1 bg-accent mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Why AI Training. Why Now.</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Why AI Training. Why Now.</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {whyNow.map((item, i) => (
@@ -115,7 +115,7 @@ export default function AITraining() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="flex gap-5 bg-white rounded-xl p-7 shadow-sm border border-border">
+                className="flex gap-4 sm:gap-5 bg-white rounded-xl p-5 sm:p-7 shadow-sm border border-border">
                 <div className="shrink-0 h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center mt-1">
                   <item.icon className="h-5 w-5 text-primary" />
                 </div>
@@ -131,7 +131,7 @@ export default function AITraining() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-14">
             <div className="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Track 01</div>
-            <h2 className="font-serif text-3xl font-bold text-foreground mb-3">AI Literacy for Senior Leaders</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-3">AI Literacy for Senior Leaders</h2>
             <p className="text-muted-foreground">4-hour intensive | Available as a half-day workshop or split across two sessions</p>
             <div className="flex flex-wrap gap-2 mt-4">
               {["C-Suite Executives", "Senior Leaders", "Board Members", "HR & L&D Heads", "General Managers"].map((who, i) => (
@@ -165,7 +165,7 @@ export default function AITraining() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-14">
             <div className="inline-block bg-accent text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Track 02</div>
-            <h2 className="font-serif text-3xl font-bold text-foreground mb-3">Hands-On Technical AI Programmes</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-3">Hands-On Technical AI Programmes</h2>
             <p className="text-muted-foreground">6 standalone programmes — each 4–8 hours, combinable into learning journeys</p>
             <div className="flex flex-wrap gap-2 mt-4">
               {["Managers & Analysts", "Marketing & Sales Teams", "HR Professionals", "Technically Inclined Executives", "Operations Leaders"].map((who, i) => (
@@ -198,7 +198,7 @@ export default function AITraining() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-white">AI Trainers</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white">AI Trainers</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-10">
             {trainers.map((trainer, i) => (
@@ -207,7 +207,7 @@ export default function AITraining() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="bg-white rounded-2xl p-10">
+                className="bg-white rounded-2xl p-6 md:p-10">
                 <div className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">{trainer.track}</div>
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-1">{trainer.name}</h3>
                 <p className="text-sm text-muted-foreground mb-6">{trainer.role}</p>
@@ -227,11 +227,11 @@ export default function AITraining() {
       <section className="py-24 bg-background text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-4xl font-bold text-foreground mb-6">Ready to build AI capability?</h2>
-          <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Ready to build AI capability?</h2>
+          <p className="text-muted-foreground text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Tell us about your team size, current AI maturity, and goals — we'll design the right track for you.
           </p>
-          <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-md bg-primary px-10 text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
+          <Link href="/contact" className="inline-flex h-12 md:h-14 items-center justify-center rounded-md bg-primary px-8 md:px-10 text-sm md:text-base font-medium text-white shadow transition-colors hover:bg-primary/90">
             Start the Conversation <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </motion.div>
