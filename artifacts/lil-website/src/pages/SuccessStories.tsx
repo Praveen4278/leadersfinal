@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Lightbox } from "@/components/ui/lightbox";
+import Globe from "@/components/Globe";
 
 import img1 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.03_1781323608680.jpeg";
 import img2 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.04_1781323608680.jpeg";
@@ -42,16 +43,20 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Before Leaders in Lipstick®, I had the skills but not the belief. After the Board Readiness cohort, I walked into my first board interview with complete clarity. I got the role.",
-    who: "Independent Director, FMCG sector",
-  },
-  {
-    quote: "Leaders in Lipstick® gave our entire organisation a shared language for leadership. Our mixed teams came away from the behavioural workshops with real skills they use daily.",
-    who: "Head of L&D, Global Technology Firm",
-  },
-  {
     quote: "Partnering with Leaders in Lipstick® gave us more than a training programme. It gave us a measurable shift in how our women leaders see themselves — and how our organisation sees them.",
     who: "CHRO, Global Financial Services Firm",
+  },
+  {
+    quote: "Feb 2016 : I had the chance to attend your lecture while serving in IDBI Bank as Assistant manager. Seeing you teach with such passion made me question myself that will I ever be this passionate about my job. You were so full of life. You inspired me to pursue my dream of becoming a civil servant and resume my preparation. August 2020 : Have qualified civil services 2019. AIR 680. It was not possible without your help ma'am. Thank u so much for inspiring this average kid to believe in his dreams. Thank you for showing me that it is okay to dream and chase them.",
+    who: "Yashlok Kumar Dutt, IRS Officer.",
+  },
+  {
+    quote: "Really, the workshop is well devised for its very objective. You conducted it in a superb manner. Thanks a lot for making the participants motivated. Thanks a lot for the tips you shared on developing positive attitude, on many etiquettes and on winning the negative emotions. It was a wonderful experience. Thanks a lot, Siji, for everything what I have gained in the last two days.",
+    who: "Rajavel, AGM, Central Bank",
+  },
+  {
+    quote: "As the Head of the Zonal Training Centre, Mumbai, I had the opportunity of attending Siji's lively and energetic sessions on Unnati: Rising to Success, a program to enable women employees to develop the necessary attributes for taking up leadership positions in the organization while ensuring work life balance. As she starts the session, within minutes, she has already established that one to one rapport with each participant and even the introverted participants start opening up to her. Handling a session on Soft Skills is not everyone's cup of tea, but I have seen Siji spread her charm, wit, and humor together with sending out hard hitting reality messages that set us thinking. She is very expressive and keeps the participants spellbound with her real-life experiences and stories. Her sessions gave insight into Image Building: Enhancing your professional presence, Effective Communication and Negotiation Skills, Corporate Image building and Balancing Act: Avoiding the superwoman syndrome. Her presentation style through activities and role plays was very engaging and inspiring. The feedback received for her sessions was incredibly positive and encouraging.",
+    who: "Sonali Nagle, Deputy General Manager, IDBI Bank",
   },
 ];
 
@@ -71,7 +76,7 @@ export default function SuccessStories() {
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-              From the Room to the Boardroom
+              Down Memory Lane
             </h1>
             <p className="text-xl text-white/80">
               Every number behind our impact is a leader who chose to invest in herself — and an organisation that chose to invest in her.
@@ -105,7 +110,7 @@ export default function SuccessStories() {
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
             <h2 className="font-serif text-4xl font-bold text-foreground">What Leaders Say</h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 40 }}
@@ -130,7 +135,7 @@ export default function SuccessStories() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-14">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">In the Room</h2>
+            <h2 className="font-serif text-4xl font-bold text-foreground">Beyond Training — Building Lasting Memories</h2>
             <p className="text-muted-foreground mt-4">Moments from workshops, cohorts, and leadership journeys across India and beyond.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -149,6 +154,18 @@ export default function SuccessStories() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Global Locations */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
+            <div className="w-12 h-1 bg-accent mx-auto mb-6" />
+            <h2 className="font-serif text-4xl font-bold text-foreground">Our Global Footprint</h2>
+            <p className="text-muted-foreground mt-4">Empowering leaders across continents.</p>
+          </motion.div>
+          <Globe />
         </div>
       </section>
 

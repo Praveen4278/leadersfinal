@@ -149,7 +149,7 @@ export default function Home() {
             <p className="text-white/80 text-base md:text-lg max-w-xl mb-10 font-light leading-relaxed">
               Bespoke leadership and behavioural training for organisations that believe human capability is the ultimate competitive advantage.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap">
               <Link href="/programs">
                 <button className="w-12 h-12 rounded-full border-2 border-white text-white flex items-center justify-center hover:bg-white hover:text-foreground transition-all duration-300">
                   <ArrowRight className="h-5 w-5" />
@@ -158,6 +158,13 @@ export default function Home() {
               <Link href="/programs" className="text-white/80 text-sm font-medium hover:text-white transition-colors">
                 Explore Programs
               </Link>
+              <a
+                href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
+                download
+                className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#70162C] transition-all duration-300"
+              >
+                <span>Download Brochure</span>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -366,12 +373,12 @@ export default function Home() {
                 transition={{ delay: i * 0.05 }}
                 className="text-center"
               >
-                <div className="w-20 h-20 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
-                  <client.Icon
-                    className="h-10 w-10"
-                    style={{ color: client.color }}
-                  />
-                </div>
+                <div className="w-24 h-24 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
+                <client.Icon
+                  className="h-12 w-12"
+                  style={{ color: client.color }}
+                />
+              </div>
                 <p className="text-xs text-muted-foreground font-medium">{client.name}</p>
               </motion.div>
             ))}
@@ -423,62 +430,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PARTNERS ── */}
-      <section className="py-24 bg-white border-y border-border/40">
-        <div className="container mx-auto px-6 lg:px-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Partners</h2>
-            <div className="w-12 h-1 bg-accent mx-auto" />
-          </motion.div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center opacity-60">
-            {clients.map((client, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group flex flex-col items-center gap-3"
-              >
-                <client.Icon
-                  className="h-10 w-10 transition-all duration-300 group-hover:scale-110"
-                  style={{ color: client.color }}
+      {/* ── BOTTOM CTA ── */}
+      <section className="bg-foreground py-20 md:py-28 text-center">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+            {/* QR Code Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col items-center"
+            >
+              <a href="https://leadersinlipstick.in" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/qr.png"
+                  alt="QR Code to leadersinlipstick.in"
+                  className="w-40 h-40 md:w-48 md:h-48 rounded-xl shadow-2xl bg-white p-2"
                 />
-                <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                  {client.name}
-                </span>
-              </motion.div>
-            ))}
+              </a>
+              <p className="text-white/70 text-xs mt-4 uppercase tracking-widest">
+                Scan to visit leadersinlipstick.in
+              </p>
+            </motion.div>
+
+            {/* Main CTA Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <p className="text-white/50 text-xs uppercase tracking-widest mb-6">Ready to invest in leadership?</p>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-10">
+                Let's build something<br />
+                <span className="text-accent">extraordinary.</span>
+              </h2>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 bg-primary text-white px-10 py-4 text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300"
+              >
+                Partner With Us <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* ── BOTTOM CTA ── */}
-      <section className="bg-foreground py-28 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-white/50 text-xs uppercase tracking-widest mb-6">Ready to invest in leadership?</p>
-          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-10">
-            Let's build something<br />
-            <span className="text-accent">extraordinary.</span>
-          </h2>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-primary text-white px-10 py-4 text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300"
-          >
-            Partner With Us <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </motion.div>
       </section>
     </div>
   );

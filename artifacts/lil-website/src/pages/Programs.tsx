@@ -61,28 +61,41 @@ const womenPrograms = [
   },
 ];
 
-const allWorkshops = [
-  { num: "01", title: "The Art of Negotiation", tagline: "Prepare. Position. Protect." },
-  { num: "02", title: "Prioritisation & Planning", tagline: "Choose. Focus. Deliver." },
-  { num: "03", title: "The Positive Leader", tagline: "Absorb. Redirect. Inspire." },
-  { num: "04", title: "Impactful Business Communication", tagline: "Structure. Clarity. Land." },
-  { num: "05", title: "Mindfulness for Better Productivity", tagline: "Attend. Focus. Recover." },
-  { num: "06", title: "The Power of Impact & Influence", tagline: "Earn. Frame. Move." },
-  { num: "07", title: "Effective Strategic Management Skills", tagline: "Think. Trade Off. Lead." },
-  { num: "08", title: "Being Emotionally Intelligent", tagline: "Self-Aware. Composed. Connected." },
-  { num: "09", title: "Work-Life Integration", tagline: "Sustain. Restore. Thrive." },
-  { num: "10", title: "Setting Effective Goals for Self", tagline: "Specific. Measurable. Owned." },
-  { num: "11", title: "Executive Presence & Grooming", tagline: "Belong. Project. Command." },
-  { num: "12", title: "Enabling Team Effectiveness", tagline: "Surface. Shift. Align." },
-  { num: "13", title: "Art of Giving Feedback", tagline: "Specific. Impact-Focused. Trust-Preserving." },
-  { num: "14", title: "Coaching & Mentoring", tagline: "Ask. Unlock. Develop." },
-  { num: "15", title: "Customer Centricity", tagline: "See. Simplify. Serve." },
-  { num: "16", title: "Stakeholder Management", tagline: "Map. Engage. Advance." },
-  { num: "17", title: "Effective Selling Skills", tagline: "Discover. Understand. Propose." },
-  { num: "18", title: "Storytelling & Public Speaking", tagline: "Hook. Build Tension. Land." },
-  { num: "19", title: "Personal Effectiveness", tagline: "Audit. Design. Own." },
-  { num: "20", title: "Outbound Training Workshops", tagline: "Disrupt. Discover. Transfer." },
-];
+const allWorkshops = {
+  "CXO": [
+    { num: "01", title: "Executive Presence & Gravitas", tagline: "Command the Room" },
+    { num: "02", title: "Strategic Decision Making", tagline: "Lead with Clarity" },
+    { num: "03", title: "Board Readiness", tagline: "Govern, Decide, Lead" },
+  ],
+  "Senior Managerial": [
+    { num: "04", title: "The Art of Negotiation", tagline: "Prepare. Position. Protect." },
+    { num: "05", title: "C-Suite Communication", tagline: "Speak with Impact" },
+    { num: "06", title: "Strategic Management Skills", tagline: "Think. Trade Off. Lead." },
+    { num: "07", title: "Stakeholder Management", tagline: "Map. Engage. Advance." },
+  ],
+  "Mid Managerial": [
+    { num: "08", title: "Coaching & Mentoring", tagline: "Ask. Unlock. Develop." },
+    { num: "09", title: "Enabling Team Effectiveness", tagline: "Surface. Shift. Align." },
+    { num: "10", title: "The Power of Impact & Influence", tagline: "Earn. Frame. Move." },
+    { num: "11", title: "Effective Feedback", tagline: "Specific. Impact-Focused. Trust-Preserving." },
+  ],
+  "Entry Level & Support Team": [
+    { num: "12", title: "Prioritisation & Planning", tagline: "Choose. Focus. Deliver." },
+    { num: "13", title: "Impactful Business Communication", tagline: "Structure. Clarity. Land." },
+    { num: "14", title: "Mindfulness for Better Productivity", tagline: "Attend. Focus. Recover." },
+    { num: "15", title: "Personal Effectiveness", tagline: "Audit. Design. Own." },
+    { num: "16", title: "Setting Effective Goals", tagline: "Specific. Measurable. Owned." },
+    { num: "17", title: "Work-Life Integration", tagline: "Sustain. Restore. Thrive." },
+    { num: "18", title: "The Positive Leader", tagline: "Absorb. Redirect. Inspire." },
+    { num: "19", title: "Storytelling & Public Speaking", tagline: "Hook. Build Tension. Land." },
+    { num: "20", title: "Being Emotionally Intelligent", tagline: "Self-Aware. Composed. Connected." },
+  ],
+  "All Levels": [
+    { num: "21", title: "Customer Centricity", tagline: "See. Simplify. Serve." },
+    { num: "22", title: "Effective Selling Skills", tagline: "Discover. Understand. Propose." },
+    { num: "23", title: "Outbound Training Workshops", tagline: "Disrupt. Discover. Transfer." },
+  ],
+};
 
 const methodology = [
   { step: "01", title: "Discover", desc: "We immerse ourselves in your organisation's context, culture, and gaps through diagnostic conversations and needs analysis." },
@@ -197,19 +210,35 @@ export default function Programs() {
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-accent text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Stream 02</div>
             <h2 className="font-serif text-4xl font-bold text-foreground mb-4">All-Employee Behavioural Workshops</h2>
-            <p className="text-muted-foreground max-w-2xl">20 high-impact workshop modules — open to all employees, delivered to build the behaviours that drive organisational performance.</p>
+            <p className="text-muted-foreground max-w-2xl">High-impact workshop modules — open to all employees, delivered to build the behaviours that drive organisational performance.</p>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {allWorkshops.map((ws, i) => (
-              <motion.div key={i}
+
+          <div className="space-y-16">
+            {Object.entries(allWorkshops).map(([category, workshops], categoryIndex) => (
+              <motion.div
+                key={categoryIndex}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-                className="bg-muted rounded-xl p-6 border border-border hover:border-accent hover:shadow-md transition-all">
-                <div className="font-serif text-3xl font-bold text-accent/40 mb-3">{ws.num}</div>
-                <h4 className="font-serif text-base font-bold text-foreground mb-1">{ws.title}</h4>
-                <p className="text-xs text-muted-foreground font-medium tracking-wide">{ws.tagline}</p>
+                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              >
+                <h3 className="font-serif text-2xl font-bold text-primary mb-6">{category}</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {workshops.map((ws, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
+                      className="bg-muted rounded-xl p-6 border border-border hover:border-accent hover:shadow-md transition-all"
+                    >
+                      <div className="font-serif text-3xl font-bold text-accent/40 mb-3">{ws.num}</div>
+                      <h4 className="font-serif text-base font-bold text-foreground mb-1">{ws.title}</h4>
+                      <p className="text-xs text-muted-foreground font-medium tracking-wide">{ws.tagline}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>

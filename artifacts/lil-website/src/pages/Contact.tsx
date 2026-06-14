@@ -99,7 +99,7 @@ export default function Contact() {
       // Fallback to mailto if Formspree fails!
       const subject = encodeURIComponent(`Contact from ${data.firstName} ${data.lastName} - ${data.organisation}`);
       const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nOrganisation: ${data.organisation}\nRole: ${data.role}\n\nMessage:\n${data.message}`);
-      window.location.href = `mailto:shweta.leadersinlipstick@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@leadersinlipstick.com?subject=${subject}&body=${body}`;
       setSubmitted(true);
       toast({
         title: "Opening email client",
@@ -150,7 +150,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-0.5">{opt.label}</div>
-                      <div className="text-foreground font-medium group-hover:text-primary transition-colors">{opt.value}</div>
+                      <div className="text-blue-600 underline font-medium group-hover:text-blue-800 transition-colors">{opt.value}</div>
                     </div>
                   </motion.a>
                 ))}

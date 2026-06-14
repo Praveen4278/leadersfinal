@@ -30,7 +30,7 @@ import {
   LicIcon,
   KotakBankIcon,
   TechMahindraIcon,
-  LtiMindtreeIcon,
+  LtimindtreeIcon,
   EurofinsIcon,
   MphasisIcon,
   HexawareIcon,
@@ -124,7 +124,7 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
       { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57" } },
       { name: "Tata Group", Icon: SiTata, iconStyle: { color: "#004B87" } },
       { name: "Tech Mahindra", Icon: TechMahindraIcon },
-      { name: "LTIMindtree", Icon: LtiMindtreeIcon },
+      { name: "LTIMindtree", Icon: LtimindtreeIcon },
       { name: "Next Gen", Icon: NextGenIcon },
       { name: "Eurofins", Icon: EurofinsIcon },
       { name: "TCS", Icon: SiTcs, iconStyle: { color: "#0057A8" } },
@@ -167,29 +167,29 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
-      className="flex flex-col items-center justify-center gap-2.5 bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
-      style={{ minHeight: 104 }}
+      className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group"
+      style={{ minHeight: 160 }}
     >
       {Icon ? (
         <Icon
           style={{
-            height: 48,
-            width: 48,
+            height: 120,
+            width: 120,
             objectFit: "contain",
             ...iconStyle,
           }}
         />
       ) : (
         <div
-          className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 shadow-sm"
+          className="w-28 h-28 rounded-lg flex items-center justify-center shrink-0"
           style={{ backgroundColor: "#70162C" }}
         >
-          <span className="font-bold text-[10px] leading-none tracking-wide text-center text-white">
+          <span className="font-bold text-[20px] leading-none tracking-wide text-center text-white">
             {initAbbr(name, abbr)}
           </span>
         </div>
       )}
-      <span className="text-[11px] font-semibold text-center text-muted-foreground leading-tight max-w-full px-1">
+      <span className="absolute bottom-0 left-0 right-0 text-center text-xs font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {name}
       </span>
     </motion.div>
@@ -239,26 +239,12 @@ export default function Clients() {
         </div>
       </section>
 
-      {/* Image showcase */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <img src={clientImg1} alt="Corporate partnership" className="w-full h-72 object-cover rounded-xl shadow-md" />
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
-              <img src={clientImg2} alt="Leadership summit" className="w-full h-72 object-cover rounded-xl shadow-md" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Clientele by Sector */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-foreground">Our Clientele</h2>
+            <h2 className="font-serif text-4xl font-bold text-foreground">Our Clientele and Collaborators</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               From global multinationals to trusted Indian institutions — organisations that invest in their people choose Leaders in Lipstick®.
             </p>
@@ -291,16 +277,7 @@ export default function Clients() {
         </div>
       </section>
 
-      {/* Marquee strip */}
-      <section className="py-6 bg-muted overflow-hidden border-y border-border">
-        <div className="flex animate-[marquee_40s_linear_infinite] whitespace-nowrap">
-          {[...allClients, ...allClients].map((client, i) => (
-            <span key={i} className="mx-6 text-foreground/40 font-medium text-xs uppercase tracking-widest shrink-0">
-              {client.name} <span className="mx-3 text-accent">·</span>
-            </span>
-          ))}
-        </div>
-      </section>
+
 
       {/* Trust statement */}
       <section className="py-24 bg-muted">

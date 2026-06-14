@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Star, Globe, Heart, Lightbulb, Users } from "lucide-react";
+import { ArrowRight, Star, Globe, Heart, Lightbulb, Users, Linkedin, ExternalLink } from "lucide-react";
 import sijiImg from "@assets/siji varghese.jpeg";
 import vandanaImg from "@assets/vandhana sachdev.jpeg";
 import ajitImg from "@assets/ajit.jpeg";
@@ -40,27 +40,28 @@ const values = [
   },
 ];
 
+const founder = {
+  name: "Siji Varghese",
+  title: "Founder & Chief Visionary Officer",
+  img: sijiImg,
+  quote: "Transforming leadership, one woman at a time.",
+  bio: "Siji Varghese is an internationally recognized leadership expert, TEDx speaker, executive coach, and transformational facilitator with over 28 years of experience in leadership development, organizational transformation, and people empowerment. As the Founder of Leaders in Lipstick®, she has inspired more than 85,000 professionals globally through 1,200+ workshops, keynote sessions, and coaching engagements.",
+  credentials: [
+    "Four-time TEDx Speaker",
+    "Karmaveer Chakra Award Recipient",
+    "International WEE Rising Women Award",
+    "Global Women in Leadership Award",
+  ],
+  global: "Global Stages",
+};
+
 const team = [
-  {
-    name: "Siji Varghese",
-    title: "Founder & Chief Visionary Officer",
-    img: sijiImg,
-    quote: "Transforming leadership, one woman at a time.",
-    bio: "Siji Varghese is an internationally recognized leadership expert, TEDx speaker, executive coach, and transformational facilitator with over 28 years of experience in leadership development, organizational transformation, and people empowerment. As the Founder of Leaders in Lipstick®, she has inspired more than 85,000 professionals globally through 1,200+ workshops, keynote sessions, and coaching engagements.",
-    credentials: [
-      "Four-time TEDx Speaker",
-      "Karmaveer Chakra Award Recipient",
-      "International WEE Rising Women Award",
-      "Global Women in Leadership Award",
-    ],
-    global: "Global Stages",
-  },
   {
     name: "Vandana Sachdeva",
     title: "Brand Strategy Head & AI Transformation Advisor",
     img: vandanaImg,
     quote: "Bridging AI and human potential for future-ready leaders.",
-    bio: "Vandana Sachdeva is a seasoned business leader, AI adoption strategist, and corporate relations expert with over 15 years of experience across fintech, governance, brand strategy, and organizational transformation. She specializes in bridging artificial intelligence with real-world business applications, enabling organizations to accelerate decision-making, improve productivity, and drive measurable business outcomes.",
+    bio: "Vandana Sachdeva is a seasoned business leader, AI adoption strategist, and corporate relations expert with over 15 years of experience across fintech, governance, brand strategy, and organisational transformation. She specializes in bridging artificial intelligence with real-world business applications, enabling organisations to accelerate decision-making, improve productivity, and drive measurable business outcomes.",
     credentials: [
       "AI Workflow Integration Specialist",
       "Prompt Engineering Expert",
@@ -68,20 +69,22 @@ const team = [
       "Podcast Host & Ecosystem Builder",
     ],
     global: "India · International",
+    linkedin: "https://www.linkedin.com/in/vandana-sachdeva/",
   },
   {
     name: "Prof. Ajit Vishwakarma",
     title: "Chief Learning Officer & Chief Data Scientist",
     img: ajitImg,
     quote: "Learning is the currency of the future.",
-    bio: "Prof. Ajit Vishwakarma is an internationally acclaimed organizational growth strategist, Industrial Psychologist, Chief Data Scientist, Generative AI specialist, and Master Trainer with over 15 years of experience in corporate learning, leadership development, and technology transformation. He has trained more than 500,000 professionals across industries and conducted over 15,000 learning sessions globally.",
+    bio: "Prof. Ajit Vishwakarma is an internationally acclaimed organisational growth strategist, Industrial Psychologist, Chief Data Scientist, Generative AI specialist, and Master Trainer with over 15 years of experience in corporate learning, leadership development, and technology transformation. He has trained more than 500,000 professionals across industries and conducted over 15,000 learning sessions globally.",
     credentials: [
       "Government of India Certified Lead Assessor",
       "Subject Matter Expert",
       "Mentored Government Bodies: Indian Army, MeitY, RBI, NSDC",
-      "Worked with 150+ leading organizations including Microsoft, Deloitte, IBM, Infosys, JP Morgan",
+      "Worked with 150+ leading organisations including Microsoft, Deloitte, IBM, Infosys, JP Morgan",
     ],
     global: "India · Global",
+    linkedin: "https://www.linkedin.com/in/ajitkarma/",
   },
   {
     name: "Reji Samuel",
@@ -96,6 +99,7 @@ const team = [
       "Child Counselling – Malaysia",
     ],
     global: "India · Dubai · Sharjah · United Kingdom · Europe · Africa",
+    linkedin: "https://www.linkedin.com/in/reji-samuel-149764216?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Shweta Batra",
@@ -107,10 +111,10 @@ const team = [
       "World Record Holder",
       "Award-Winning Life & Mindset Coach",
       "International Keynote Speaker (2025)",
-      "Inspiring Woman Psychologist Award (2025)",
       "C20/G20 Strategic Moderator",
     ],
     global: "Mumbai, India · International Stages",
+    linkedin: "https://www.linkedin.com/in/shweta-b-792836a5/",
   },
 ];
 
@@ -191,13 +195,13 @@ export default function About() {
               </Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }}
-              className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-accent">
-              <div className="text-accent text-4xl font-serif font-bold mb-2">02</div>
+              className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-primary">
+              <div className="text-primary text-4xl font-serif font-bold mb-2">02</div>
               <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Behavioural Programs for All</h3>
               <p className="text-muted-foreground leading-relaxed">
                 20 high-impact workshop modules — from negotiation and emotional intelligence to storytelling and stakeholder management — open to all employees, delivered to build the behaviours that drive organisational performance.
               </p>
-              <Link href="/programs" className="inline-flex items-center mt-6 text-accent font-medium hover:underline">
+              <Link href="/programs" className="inline-flex items-center mt-6 text-primary font-medium hover:underline">
                 Explore Workshops <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </motion.div>
@@ -231,24 +235,84 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
+            <div className="w-12 h-1 bg-accent mx-auto mb-6" />
+            <h2 className="font-serif text-4xl font-bold text-foreground">Meet Our Founder</h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20"
+          >
+            <div className="grid md:grid-cols-2">
+              <div className="aspect-square md:aspect-auto overflow-hidden">
+                <img src={founder.img} alt={founder.name} className="w-full h-full object-cover object-top" />
+              </div>
+              <div className="p-10 flex flex-col justify-center">
+                <div className="text-accent font-serif text-6xl mb-2">"</div>
+                <p className="font-serif text-xl italic text-primary mb-8">{founder.quote}</p>
+                <h3 className="font-serif text-3xl font-bold text-foreground mb-1">{founder.name}</h3>
+                <p className="text-sm text-accent mb-6 font-semibold uppercase tracking-wide">{founder.title}</p>
+                <p className="text-sm text-foreground/80 leading-relaxed mb-8">{founder.bio}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {founder.credentials.map((c, ci) => (
+                    <span key={ci} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">{c}</span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4" />
+                  <span>{founder.global}</span>
+                </div>
+                <a 
+                  href="https://www.sijivarghese.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
+                >
+                  <ExternalLink className="h-3 w-3" />
+                  <span>www.sijivarghese.com</span>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/siji-varghese-leaders-in-lipstick%C2%AE-a2921b19/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
+                >
+                  <Linkedin className="h-3 w-3" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Team */}
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
             <div className="w-12 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="font-serif text-4xl font-bold text-white">Meet the Team</h2>
-            <p className="text-white/70 mt-4 max-w-xl mx-auto">The people who built Leaders in Lipstick® — and continue to shape it.</p>
+            <h2 className="font-serif text-4xl font-bold text-white">Our Team</h2>
+            <p className="text-white/70 mt-4 max-w-xl mx-auto">The dedicated professionals who support our mission of transforming leadership.</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {team.map((member, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                className="bg-white rounded-2xl overflow-hidden shadow-2xl"
+              >
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover object-center" />
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="p-8">
                   <div className="text-accent font-serif text-4xl mb-2">"</div>
@@ -261,10 +325,23 @@ export default function About() {
                       <span key={ci} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">{c}</span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Globe className="h-4 w-4" />
-                    <span>{member.global}</span>
-                  </div>
+                  <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4" />
+                  <span>{member.global}</span>
+                </div>
+                {member.linkedin && (
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-1 hover:text-primary transition-colors"
+                  >
+                    <Linkedin className="h-3 w-3" />
+                    <span>LinkedIn</span>
+                  </a>
+                )}
+              </div>
                 </div>
               </motion.div>
             ))}
