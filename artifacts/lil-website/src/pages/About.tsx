@@ -128,6 +128,7 @@ const team = [
       "Community Builder",
     ],
     global: "Global",
+    linkedin: "https://www.linkedin.com/in/deepapadda?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 ];
 
