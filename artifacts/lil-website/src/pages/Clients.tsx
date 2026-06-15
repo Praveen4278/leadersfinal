@@ -167,27 +167,27 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
-      className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group min-h-[110px] md:min-h-[160px]"
+      className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group min-h-[180px] md:min-h-[220px]"
     >
       {img ? (
         <img
           src={img}
           alt={name}
-          className="h-20 w-20 md:h-28 md:w-28 object-contain transition-all duration-300"
+          className="h-32 w-32 md:h-40 md:w-40 aspect-square object-contain transition-all duration-300"
         />
       ) : Icon ? (
         <Icon
-          className="h-20 w-20 md:h-28 md:w-28 object-contain transition-all duration-300"
+          className="h-32 w-32 md:h-40 md:w-40 aspect-square transition-all duration-300"
           style={{
             ...iconStyle,
           }}
         />
       ) : (
         <div
-          className="w-20 h-20 md:w-28 md:h-28 rounded-lg flex items-center justify-center shrink-0"
+          className="w-32 h-32 md:w-40 md:h-40 aspect-square rounded-lg flex items-center justify-center shrink-0"
           style={{ backgroundColor: "#70162C" }}
         >
-          <span className="font-bold text-[14px] md:text-[20px] leading-none tracking-wide text-center text-white">
+          <span className="font-bold text-[18px] md:text-[28px] leading-none tracking-wide text-center text-white">
             {initAbbr(name, abbr)}
           </span>
         </div>
