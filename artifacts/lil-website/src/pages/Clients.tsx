@@ -78,7 +78,7 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     accentClass: "text-primary",
     clients: [
       { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0" } },
-      { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" }, customSize: "h-20 w-20 md:h-24 lg:h-32 w-24 lg:w-32" },
+      { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" }, customSize: "h-12 w-12 md:h-20 lg:h-28 xl:h-36 w-20 lg:w-28 xl:w-36" },
       { name: "HP", img: "/hp.png" },
       { name: "Saint Gobain", img: "/SaintGobain.png" },
       { name: "Ajanta Pharma", img: "/Ajanta-Pharma-Limited-Logo.png" },
@@ -160,7 +160,7 @@ function initAbbr(name: string, abbr?: string) {
 
 function ClientCard({ client, index }: { client: Client; index: number }) {
   const { name, Icon, iconStyle, abbr, img, customSize } = client;
-  const defaultSize = "h-24 w-24 md:h-32 lg:h-40 w-32 lg:w-40";
+  const defaultSize = "h-16 w-16 md:h-24 lg:h-32 xl:h-40 w-24 lg:w-32 xl:w-40";
   const size = customSize || defaultSize;
 
   return (
@@ -170,7 +170,7 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
-      className="flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 cursor-default relative group min-h-[160px] md:min-h-[200px] lg:min-h-[240px]"
+      className="flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 cursor-default relative group min-h-[120px] md:min-h-[180px] lg:min-h-[220px] xl:min-h-[240px] p-4"
     >
       {img ? (
         <img
@@ -190,7 +190,7 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
           className={`${size} aspect-square rounded-lg flex items-center justify-center shrink-0`}
           style={{ backgroundColor: "#70162C" }}
         >
-          <span className="font-bold text-[14px] md:text-[20px] lg:text-[28px] leading-none tracking-wide text-center text-white">
+          <span className="font-bold text-[12px] md:text-[16px] lg:text-[22px] xl:text-[28px] leading-none tracking-wide text-center text-white">
             {initAbbr(name, abbr)}
           </span>
         </div>
@@ -271,7 +271,7 @@ export default function Clients() {
                     {sector.label}
                   </h3>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-10 xl:gap-12">
                   {sector.clients.map((client, ci) => (
                     <ClientCard key={ci} client={client} index={ci} />
                   ))}
