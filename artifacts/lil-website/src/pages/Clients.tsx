@@ -122,8 +122,8 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     icon: Globe2,
     accentClass: "text-primary",
     clients: [
-      { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57" } },
-      { name: "Tata Group", Icon: SiTata, iconStyle: { color: "#004B87" } },
+      { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57" }, customSize: "h-14 w-14 md:h-22 lg:h-30 xl:h-38 w-22 lg:w-30 xl:w-38" },
+      { name: "Tata Group", Icon: SiTata, iconStyle: { color: "#004B87" }, customSize: "h-14 w-14 md:h-22 lg:h-30 xl:h-38 w-22 lg:w-30 xl:w-38" },
       { name: "Tech Mahindra", img: "/Tech Mahindra.png" },
       { name: "LTIMindtree", img: "/LTI Mindtree.png" },
       { name: "Next Gen", img: "/Nextgen.png" },
