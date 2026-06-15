@@ -99,7 +99,7 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
       { name: "Citibank", img: "/Citi Bank.png" },
       { name: "ICICI Bank", img: "/ICICI.jpeg" },
       { name: "IDBI Bank", img: "/IDBI.png" },
-      { name: "Bank of Baroda", Icon: BankOfBarodaIcon },
+      { name: "Bank of Baroda", img: "/BOB.png" },
       { name: "IOB", img: "/IOB.jpg" },
       { name: "IIFL", img: "/IIFL.jpeg" },
       { name: "Axis Bank", img: "/Axis Bank.png" },
