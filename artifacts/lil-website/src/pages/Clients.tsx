@@ -79,7 +79,6 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
       { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0" } },
       { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" } },
       { name: "HP", img: "/hp.png" },
-      { name: "Schneider Electric", Icon: SchneiderElectricIcon },
       { name: "Saint Gobain", img: "/SaintGobain.png" },
       { name: "Ajanta Pharma", img: "/Ajanta-Pharma-Limited-Logo.png" },
       { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
