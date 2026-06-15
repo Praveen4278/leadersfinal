@@ -67,6 +67,7 @@ type Client = {
   Icon?: IconType;
   iconStyle?: React.CSSProperties;
   abbr?: string;
+  img?: string;
 };
 
 const sectors: { label: string; icon: any; accentClass: string; clients: Client[] }[] = [
@@ -77,16 +78,16 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     clients: [
       { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0" } },
       { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" } },
-      { name: "HP", Icon: SiHp, iconStyle: { color: "#0096D6" } },
+      { name: "HP", img: "/hp.png" },
       { name: "Schneider Electric", Icon: SchneiderElectricIcon },
-      { name: "Saint Gobain", Icon: SaintGobainIcon },
-      { name: "Ajanta Pharma", Icon: AjantaPharmaIcon },
+      { name: "Saint Gobain", img: "/SaintGobain.jpg" },
+      { name: "Ajanta Pharma", img: "/Ajanta-Pharma-Limited-Logo.jpg" },
       { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
-      { name: "Pidilite Industries", Icon: PidiliteIcon },
-      { name: "Invisalign", Icon: InvisalignIcon },
-      { name: "D'decor", Icon: DdecorIcon },
-      { name: "Yasham", Icon: YashamIcon },
-      { name: "Ashtech", Icon: AshtechIcon },
+      { name: "Pidilite Industries", img: "/Pidilite.png" },
+      { name: "Invisalign", img: "/Invisalign-logo.jpg" },
+      { name: "D'decor", img: "/Ddecor.png" },
+      { name: "Yasham", img: "/Yasham.png" },
+      { name: "Ashtech", img: "/Ashtech.jpeg" },
     ],
   },
   {
@@ -94,26 +95,26 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     icon: Landmark,
     accentClass: "text-accent",
     clients: [
-      { name: "Mastercard", Icon: SiMastercard, iconStyle: { color: "#EB001B" } },
-      { name: "Citibank", Icon: CitiIcon },
-      { name: "ICICI Bank", Icon: IciciBankIcon },
-      { name: "IDBI Bank", Icon: IdbiBankIcon },
+      { name: "Mastercard", img: "/Mastercard.png" },
+      { name: "Citibank", img: "/Citi Bank.png" },
+      { name: "ICICI Bank", img: "/ICICI.jpeg" },
+      { name: "IDBI Bank", img: "/IDBI.png" },
       { name: "Bank of Baroda", Icon: BankOfBarodaIcon },
-      { name: "IOB", Icon: IobIcon },
-      { name: "IIFL", Icon: IiflIcon },
-      { name: "Axis Bank", Icon: AxisBankIcon },
-      { name: "Yes Bank", Icon: YesBankIcon },
-      { name: "CSB Bank", Icon: CsbBankIcon },
-      { name: "Corporation Bank", Icon: CorporationBankIcon },
-      { name: "Sampath Bank", Icon: SampathBankIcon },
-      { name: "Bank of Ceylon", Icon: BankOfCeylonIcon },
-      { name: "Julius Baer", Icon: JuliusBaerIcon },
-      { name: "HDFC Bank", Icon: HdfcBankIcon },
-      { name: "Birla Sunlife Insurance", Icon: BirlaSunlifeIcon },
-      { name: "Max Life Insurance", Icon: MaxLifeIcon },
-      { name: "LIC", Icon: LicIcon },
-      { name: "Kotak Group", Icon: KotakBankIcon },
-      { name: "Nation Trust Bank", Icon: NationTrustIcon },
+      { name: "IOB", img: "/IOB.jpg" },
+      { name: "IIFL", img: "/IIFL.jpeg" },
+      { name: "Axis Bank", img: "/Axis Bank.png" },
+      { name: "Yes Bank", img: "/YES Bank.png" },
+      { name: "CSB Bank", img: "/CSB bank.png" },
+      { name: "Corporation Bank", img: "/Corporation bank.png" },
+      { name: "Sampath Bank", img: "/Sampath bank.png" },
+      { name: "Bank of Ceylon", img: "/Bank of Ceylon.png" },
+      { name: "Julius Baer", img: "/Julius Bar.png" },
+      { name: "HDFC Bank", img: "/HDFC bank.png" },
+      { name: "Birla Sunlife Insurance", img: "/Birla sunlife.png" },
+      { name: "Max Life Insurance", img: "/Max life.png" },
+      { name: "LIC", img: "/LIC.png" },
+      { name: "Kotak Group", img: "/Kotak.png" },
+      { name: "Nation Trust Bank", img: "/Nations Trust bank.png" },
     ],
   },
   {
@@ -123,16 +124,16 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     clients: [
       { name: "Wipro", Icon: SiWipro, iconStyle: { color: "#341C57" } },
       { name: "Tata Group", Icon: SiTata, iconStyle: { color: "#004B87" } },
-      { name: "Tech Mahindra", Icon: TechMahindraIcon },
-      { name: "LTIMindtree", Icon: LtimindtreeIcon },
-      { name: "Next Gen", Icon: NextGenIcon },
-      { name: "Eurofins", Icon: EurofinsIcon },
+      { name: "Tech Mahindra", img: "/Tech Mahindra.png" },
+      { name: "LTIMindtree", img: "/LTI Mindtree.png" },
+      { name: "Next Gen", img: "/Nextgen.png" },
+      { name: "Eurofins", img: "/Eurofins.png" },
       { name: "TCS", Icon: SiTcs, iconStyle: { color: "#0057A8" } },
-      { name: "Zensar Technologies", Icon: ZensarIcon },
-      { name: "Mphasis", Icon: MphasisIcon },
-      { name: "Genesis", Icon: GenesisIcon },
-      { name: "Hexaware", Icon: HexawareIcon },
-      { name: "CleverTap", Icon: ClevertapIcon },
+      { name: "Zensar Technologies", img: "/Zensar technology.png" },
+      { name: "Mphasis", img: "/Mphasis .png" },
+      { name: "Genesis", img: "/Genesis.png" },
+      { name: "Hexaware", img: "/Hexaware.png" },
+      { name: "CleverTap", img: "/Clevertap.png" },
     ],
   },
   {
@@ -140,8 +141,8 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     icon: Briefcase,
     accentClass: "text-accent",
     clients: [
-      { name: "DHL", Icon: SiDhl, iconStyle: { color: "#CC0000" } },
-      { name: "Foodland", Icon: FoodlandIcon },
+      { name: "DHL", img: "/DHL.png" },
+      { name: "Foodland", img: "/Foodland.jpeg" },
       { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
     ],
   },
@@ -158,7 +159,7 @@ function initAbbr(name: string, abbr?: string) {
 }
 
 function ClientCard({ client, index }: { client: Client; index: number }) {
-  const { name, Icon, iconStyle, abbr } = client;
+  const { name, Icon, iconStyle, abbr, img } = client;
 
   return (
     <motion.div
@@ -169,7 +170,13 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
       className="flex flex-col items-center justify-center hover:scale-110 transition-all duration-300 cursor-default relative group min-h-[110px] md:min-h-[160px]"
     >
-      {Icon ? (
+      {img ? (
+        <img
+          src={img}
+          alt={name}
+          className="h-20 w-20 md:h-28 md:w-28 object-contain transition-all duration-300"
+        />
+      ) : Icon ? (
         <Icon
           className="h-20 w-20 md:h-28 md:w-28 object-contain transition-all duration-300"
           style={{
