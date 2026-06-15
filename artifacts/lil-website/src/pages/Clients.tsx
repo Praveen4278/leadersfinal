@@ -68,6 +68,7 @@ type Client = {
   iconStyle?: React.CSSProperties;
   abbr?: string;
   img?: string;
+  customSize?: string; // e.g., "h-24 w-24 md:h-32 md:w-32"
 };
 
 const sectors: { label: string; icon: any; accentClass: string; clients: Client[] }[] = [
@@ -77,7 +78,7 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
     accentClass: "text-primary",
     clients: [
       { name: "Panasonic", Icon: SiPanasonic, iconStyle: { color: "#0070C0" } },
-      { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" } },
+      { name: "Xiaomi", Icon: SiXiaomi, iconStyle: { color: "#FF6900" }, customSize: "h-24 w-24 md:h-32 md:w-32" },
       { name: "HP", img: "/hp.png" },
       { name: "Saint Gobain", img: "/SaintGobain.png" },
       { name: "Ajanta Pharma", img: "/Ajanta-Pharma-Limited-Logo.png" },
@@ -158,7 +159,9 @@ function initAbbr(name: string, abbr?: string) {
 }
 
 function ClientCard({ client, index }: { client: Client; index: number }) {
-  const { name, Icon, iconStyle, abbr, img } = client;
+  const { name, Icon, iconStyle, abbr, img, customSize } = client;
+  const defaultSize = "h-32 w-32 md:h-40 md:w-40";
+  const size = customSize || defaultSize;
 
   return (
     <motion.div
@@ -173,18 +176,18 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
         <img
           src={img}
           alt={name}
-          className="h-32 w-32 md:h-40 md:w-40 aspect-square object-contain transition-all duration-300"
+          className={`${size} aspect-square object-contain transition-all duration-300`}
         />
       ) : Icon ? (
         <Icon
-          className="h-32 w-32 md:h-40 md:w-40 aspect-square transition-all duration-300"
+          className={`${size} aspect-square transition-all duration-300`}
           style={{
             ...iconStyle,
           }}
         />
       ) : (
         <div
-          className="w-32 h-32 md:w-40 md:h-40 aspect-square rounded-lg flex items-center justify-center shrink-0"
+          className={`${size} aspect-square rounded-lg flex items-center justify-center shrink-0`}
           style={{ backgroundColor: "#70162C" }}
         >
           <span className="font-bold text-[18px] md:text-[28px] leading-none tracking-wide text-center text-white">
