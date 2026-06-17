@@ -17,27 +17,38 @@ const values = [
   {
     icon: Star,
     title: "Transformative Courage",
-    desc: "We challenge comfort zones — including our own. Every programme is designed to push boundaries, not reinforce them.",
+    subtitle: "We don't develop leaders for the status quo. We develop leaders for what's next.",
+    desc: "We believe growth begins where comfort ends. We challenge assumptions, expand perspectives, and create experiences that inspire individuals and organizations to step beyond familiar boundaries and lead with conviction.",
   },
   {
     icon: Globe,
     title: "Inclusive Excellence",
-    desc: "Women-centric in identity. Inclusive in impact. Our programmes serve all professionals committed to growth.",
+    subtitle: "Advancing women. Elevating workplaces. Strengthening leadership for all.",
+    desc: "Rooted in a commitment to advancing women leaders, we create learning experiences that elevate everyone. We champion diverse voices, equitable opportunities, and the belief that excellence flourishes when inclusion is intentional.",
   },
   {
     icon: Lightbulb,
     title: "Evidence-Led Practice",
-    desc: "Our methodology integrates behavioural psychology, emotional intelligence research, and career intelligence systems.",
+    subtitle: "Science informs our methods. Human potential drives our mission.",
+    desc: "Our work is grounded in research, informed by behavioural science, and strengthened through real-world application. By integrating behavioural psychology, emotional intelligence, and leadership intelligence frameworks, we deliver learning that is both meaningful and measurable.",
   },
   {
     icon: ArrowRight,
     title: "Measurable Impact",
-    desc: "68% of our participants secure promotions or expanded roles within 18 months. Results, not rhetoric.",
+    subtitle: "Because transformation should be visible, valuable, and verifiable.",
+    desc: "We are committed to outcomes, not activity. Every engagement is designed with clear goals, practical application, and tangible results—ensuring growth translates into lasting individual, team, and organizational impact.",
   },
   {
     icon: Heart,
     title: "Sisterhood & Sponsorship",
-    desc: "We build communities of women who champion one another — peer-to-peer, cross-industry, across borders.",
+    subtitle: "Success grows faster when women rise together.",
+    desc: "We cultivate powerful networks of support, advocacy, and shared growth. Through meaningful connections, peer learning, and sponsorship, we empower women to champion one another across industries, roles, and geographies.",
+  },
+  {
+    icon: Globe,
+    title: "Lifelong Growth",
+    subtitle: "Growth is not an event. It's a lifelong practice.",
+    desc: "Leadership is not a destination but a continuous journey. We foster curiosity, reflection, and continuous development, enabling individuals to adapt, evolve, and thrive in an ever-changing world.",
   },
 ];
 
@@ -45,8 +56,8 @@ const founder = {
   name: "Siji Varghese",
   title: "Founder & Chief Visionary Officer",
   img: sijiImg,
-  quote: "Transforming leadership, one woman at a time.",
-  bio: "Siji Varghese is an internationally recognized leadership expert, TEDx speaker, executive coach, and transformational facilitator with over 28 years of experience in leadership development, organizational transformation, and people empowerment. As the Founder of Leaders in Lipstick®, she has inspired more than 85,000 professionals globally through 1,200+ workshops, keynote sessions, and coaching engagements.",
+  quote: "Transforming leaders. Elevating organizations. Empowering possibility.",
+  bio: "Internationally acclaimed in leadership development, TEDx speaker, executive coach, and Founder of Leaders in Lipstick®️, Siji Varghese has spent over 30+ years helping individuals and organizations unlock their highest potential. Having impacted more than 95,000 professionals through 1,300+ leadership engagements worldwide, she is known for creating transformative experiences that inspire courageous leadership, accelerate growth, and drive lasting change. Her mission is simple: to develop leaders who don't just succeed personally, but create meaningful impact wherever they lead.",
   credentials: [
     "Four-time TEDx Speaker",
     "Karmaveer Chakra Award Recipient",
@@ -54,6 +65,7 @@ const founder = {
     "Global Women in Leadership Award",
   ],
   global: "Global Stages",
+  website: "www.sijivarghese.com",
 };
 
 const team = [
@@ -106,8 +118,8 @@ const team = [
     name: "Shweta Batra",
     title: "Life & Mindset Coach | Counselling Psychologist | Master Trainer | Author | Educator",
     img: shwetaImg,
-    quote: "An architect of breakthroughs and sovereign growth.",
-    bio: "Award-winning Life & Mindset Coach and Keynote Speaker with a 20-year trajectory as School Principal, National Master Trainer & Educator. Shweta specialises in helping leaders, educators, and parents dismantle internal resistance to reclaim Clarity, Courage, and Action.",
+    quote: "Transforming Mindsets. Developing Leaders. Unlocking Human Potential.",
+    bio: "For over two decades, she has partnered with leaders, professionals, educators, students, and institutions to unlock human potential and drive meaningful transformation. Integrating psychology, leadership development, and behavioural insight, she helps individuals and organizations navigate complexity, cultivate resilience, and translate potential into purposeful action, sustainable growth, and lasting impact.",
     credentials: [
       "World Record Holder",
       "Award-Winning Life & Mindset Coach",
@@ -241,7 +253,8 @@ export default function About() {
                 <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-5">
                   <val.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-foreground mb-3">{val.title}</h3>
+                <h3 className="font-serif text-xl font-bold text-foreground mb-1">{val.title}</h3>
+                <p className="text-primary text-sm font-medium italic mb-3">{val.subtitle}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{val.desc}</p>
               </motion.div>
             ))}
@@ -363,11 +376,55 @@ export default function About() {
         </div>
       </section>
 
+      {/* Why Us */}
+      <section className="py-24 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
+            <div className="w-12 h-1 bg-accent mx-auto mb-6" />
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Why Us</h2>
+            <p className="font-serif text-lg sm:text-xl italic text-primary max-w-2xl mx-auto">
+              Trusted Across Industries. Proven Across Outcomes.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              {
+                num: "01",
+                title: "Relationships That Last",
+                desc: "Over 90% of our clients choose to partner with us again—because meaningful transformation earns trust.",
+              },
+              {
+                num: "02",
+                title: "Expertise Across Ecosystems",
+                desc: "From boardrooms to classrooms, factories to corporate headquarters, we tailor every engagement to the realities of each sector and audience.",
+              },
+              {
+                num: "03",
+                title: "Outcomes Over Activity",
+                desc: "We measure what matters. Every programme is designed to create observable shifts in behaviour, leadership effectiveness, and organizational performance.",
+              },
+            ].map((item, i) => (
+              <motion.div key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-white rounded-2xl p-8 border border-border hover:border-primary hover:shadow-md transition-all">
+                <div className="font-serif text-5xl font-bold text-primary/15 mb-4">{item.num}</div>
+                <h3 className="font-serif text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                <div className="w-8 h-0.5 bg-accent mb-4" />
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-background text-center">
         <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }}>
           <div className="w-12 h-1 bg-accent mx-auto mb-8" />
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Ready to work with us?</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Ready to associate with us?</h2>
           <p className="text-muted-foreground text-sm sm:text-base mb-6 md:mb-10 max-w-xl mx-auto">
             Whether you're exploring a programme or planning an organisation-wide leadership initiative — we'd love to build it with you.
           </p>
@@ -375,6 +432,55 @@ export default function About() {
             Let's Start a Conversation <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </motion.div>
+      </section>
+
+      {/* Community */}
+      <section className="py-24 bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="text-center mb-16">
+            <div className="w-12 h-1 bg-accent mx-auto mb-6" />
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Join Our Community</h2>
+            <p className="text-white/75 text-sm sm:text-base max-w-2xl mx-auto">
+              Leaders in Lipstick® is more than a training company — it's an ecosystem of women leaders, organisations, and allies committed to building a better-represented world.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Women Leaders",
+                desc: "From early-career to board-ready — join a community of women who challenge, champion, and celebrate each other.",
+                cta: "Who Can Join Us",
+                href: "/community",
+              },
+              {
+                title: "Organisations",
+                desc: "Partner with us to build inclusive leadership pipelines that deliver measurable, lasting impact across your workforce.",
+                cta: "Explore Partnerships",
+                href: "/contact",
+              },
+              {
+                title: "Allies & Advocates",
+                desc: "Mentors, coaches, CXOs, and policy voices who believe inclusion is a competitive advantage — and act on it.",
+                cta: "Get Involved",
+                href: "/contact",
+              },
+            ].map((card, i) => (
+              <motion.div key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-white/10 border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-all">
+                <div className="w-8 h-0.5 bg-accent mx-auto mb-5" />
+                <h3 className="font-serif text-xl font-bold text-white mb-3">{card.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-6">{card.desc}</p>
+                <Link href={card.href} className="inline-flex items-center gap-2 text-accent text-sm font-semibold hover:text-white transition-colors">
+                  {card.cta} <ArrowRight className="h-4 w-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );

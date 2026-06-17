@@ -83,7 +83,7 @@ export default function Community() {
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-8">
-              A Movement Built on Many Voices
+              Who Can Join Us
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/80">
               Leaders in Lipstick® is more than a training company. It's an ecosystem of professionals, organisations, and allies who believe that inclusive leadership is a competitive advantage.

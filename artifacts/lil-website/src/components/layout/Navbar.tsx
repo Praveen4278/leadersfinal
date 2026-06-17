@@ -11,17 +11,43 @@ import {
 
 const navLinks = [
   { href: "/about", label: "About" },
+  { href: "/community", label: "Who Can Join Us" },
+  { href: "/why-us", label: "Why Us" },
   { href: "/clients", label: "Clients" },
   { href: "/success-stories", label: "Success Stories" },
   { href: "/contact", label: "Contact" },
 ];
 
 const programsOptions = [
-  { href: "/programs", label: "Immersive Cohorts", description: "Structured multi-session journeys with peer learning and accountability." },
-  { href: "/programs", label: "Virtual Workshops", description: "Live online sessions designed for global, distributed teams." },
-  { href: "/programs", label: "Classroom Training", description: "In-person, facilitated workshops at your premises or our venues." },
-  { href: "/programs", label: "Outbound Training", description: "Experiential learning in the field — disrupting thinking through doing." },
+  { href: "/women-leadership", label: "Women Leadership Journeys", description: "Flagship cohort programmes to elevate women managers and senior leaders." },
+  { href: "/behavioural-intelligence", label: "Behavioural Intelligence", description: "High-impact workshops on emotional intelligence, negotiation, and influence." },
+  { href: "/strategic-team-skills", label: "Strategic & Team Skills", description: "Cross-functional capability building and high-performance team dynamics." },
+  { href: "/ai-training", label: "AI Adoption & Literacy", description: "Future-ready programmes embedding practical AI literacy into leadership." },
 ];
+
+function MobileProgramsMenu({ location, onClose }: { location: string; onClose: () => void }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <button
+        onClick={() => setOpen(!open)}
+        className={`flex items-center justify-between w-full text-sm font-medium ${location === "/programs" ? "text-[#70162C]" : "text-foreground hover:text-[#70162C]"}`}
+      >
+        Programs
+        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="mt-3 flex flex-col gap-3 pl-4 border-l-2 border-[#C9A055]">
+          {programsOptions.map((option, idx) => (
+            <Link key={idx} href={option.href} onClick={onClose} className="text-sm text-[#70162C] font-medium hover:underline">
+              {option.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,13 +62,14 @@ export function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#70162C] border-b-4 border-[#D4AF37] shadow-lg"
-    >
+        className={`fixed top-0 left-0 right-0 z-50 bg-[#70162C] border-b-4 border-[#D4AF37] shadow-lg transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}
+      >
       <div className="container mx-auto px-6 lg:px-12 h-20 md:h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 shrink-0 group">
           <img
             src={logoPath}
-            alt="Leaders in Lipstick"
+            alt="Max Potential Global — View 22 Programs"
+            loading="eager"
             className="h-20 md:h-32 w-auto object-contain transition-all duration-300 group-hover:scale-110 brightness-125"
           />
         </Link>
@@ -113,6 +140,7 @@ export function Navbar() {
             <Link href="/" onClick={() => setIsOpen(false)} className="text-sm font-medium text-foreground hover:text-[#70162C]">
               Home
             </Link>
+            <MobileProgramsMenu location={location} onClose={() => setIsOpen(false)} />
             {navLinks.map((link) => (
               <Link
                 key={link.href}

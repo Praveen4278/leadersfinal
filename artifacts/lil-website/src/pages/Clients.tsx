@@ -68,7 +68,8 @@ type Client = {
   iconStyle?: React.CSSProperties;
   abbr?: string;
   img?: string;
-  customSize?: string; // e.g., "h-24 w-24 md:h-32 md:w-32"
+  customSize?: string;
+  blendMode?: boolean;
 };
 
 const sectors: { label: string; icon: any; accentClass: string; clients: Client[] }[] = [
@@ -146,6 +147,37 @@ const sectors: { label: string; icon: any; accentClass: string; clients: Client[
       { name: "Mahindra & Mahindra", Icon: SiMahindra, iconStyle: { color: "#BE0000" } },
     ],
   },
+  {
+    label: "Others",
+    icon: Globe2,
+    accentClass: "text-primary",
+    clients: [
+      { name: "Logo 1", img: "/WhatsApp Image 2026-06-16 at 22.13.04.jpeg", blendMode: true },
+      { name: "Logo 2", img: "/WhatsApp Image 2026-06-16 at 22.13.05.jpeg", blendMode: true },
+      { name: "Logo 3", img: "/WhatsApp Image 2026-06-16 at 22.13.06 (1).jpeg", blendMode: true },
+      { name: "Logo 4", img: "/WhatsApp Image 2026-06-16 at 22.13.06 (2).jpeg", blendMode: true },
+      { name: "Logo 5", img: "/WhatsApp Image 2026-06-16 at 22.13.06.jpeg", blendMode: true },
+      { name: "Logo 6", img: "/WhatsApp Image 2026-06-16 at 22.13.07 (1).jpeg", blendMode: true },
+      { name: "Logo 7", img: "/WhatsApp Image 2026-06-16 at 22.13.07 (2).jpeg", blendMode: true },
+      { name: "Logo 8", img: "/WhatsApp Image 2026-06-16 at 22.13.07.jpeg", blendMode: true },
+      { name: "Logo 9", img: "/WhatsApp Image 2026-06-16 at 22.13.08 (1).jpeg", blendMode: true },
+      { name: "Logo 10", img: "/WhatsApp Image 2026-06-16 at 22.13.08 (2).jpeg", blendMode: true },
+      { name: "Logo 11", img: "/WhatsApp Image 2026-06-16 at 22.13.08.jpeg", blendMode: true },
+      { name: "Logo 12", img: "/WhatsApp Image 2026-06-16 at 22.13.09 (1).jpeg", blendMode: true },
+      { name: "Logo 13", img: "/WhatsApp Image 2026-06-16 at 22.13.09 (2).jpeg", blendMode: true },
+      { name: "Logo 14", img: "/WhatsApp Image 2026-06-16 at 22.13.09.jpeg", blendMode: true },
+      { name: "Logo 15", img: "/WhatsApp Image 2026-06-16 at 22.13.10 (1).jpeg", blendMode: true },
+      { name: "Logo 16", img: "/WhatsApp Image 2026-06-16 at 22.13.10.jpeg", blendMode: true },
+      { name: "Logo 17", img: "/WhatsApp Image 2026-06-16 at 22.13.11 (1).jpeg", blendMode: true },
+      { name: "Logo 18", img: "/WhatsApp Image 2026-06-16 at 22.13.11 (2).jpeg", blendMode: true },
+      { name: "Logo 19", img: "/WhatsApp Image 2026-06-16 at 22.13.11.jpeg", blendMode: true },
+      { name: "Logo 20", img: "/WhatsApp Image 2026-06-16 at 22.13.12 (1).jpeg", blendMode: true },
+      { name: "Logo 21", img: "/WhatsApp Image 2026-06-16 at 22.13.12 (2).jpeg", blendMode: true },
+      { name: "Logo 22", img: "/WhatsApp Image 2026-06-16 at 22.13.12.jpeg", blendMode: true },
+      { name: "Logo 23", img: "/WhatsApp Image 2026-06-16 at 22.13.13 (1).jpeg", blendMode: true },
+      { name: "Logo 24", img: "/WhatsApp Image 2026-06-16 at 22.13.13.jpeg", blendMode: true },
+    ],
+  },
 ];
 
 function initAbbr(name: string, abbr?: string) {
@@ -158,10 +190,10 @@ function initAbbr(name: string, abbr?: string) {
     .toUpperCase();
 }
 
-function ClientCard({ client, index }: { client: Client; index: number }) {
-  const { name, Icon, iconStyle, abbr, img, customSize } = client;
+function ClientCard({ client, index, uniform }: { client: Client; index: number; uniform?: boolean }) {
+  const { name, Icon, iconStyle, abbr, img, customSize, blendMode } = client;
   const defaultSize = "h-16 w-16 md:h-24 lg:h-32 xl:h-40 w-24 lg:w-32 xl:w-40";
-  const size = customSize || defaultSize;
+  const size = uniform ? "h-16 w-16 md:h-20 md:w-20" : (customSize || defaultSize);
 
   return (
     <motion.div
@@ -170,14 +202,20 @@ function ClientCard({ client, index }: { client: Client; index: number }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: (index % 6) * 0.05 }}
-      className="flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 cursor-default relative group min-h-[120px] md:min-h-[180px] lg:min-h-[220px] xl:min-h-[240px] p-4"
+      className={`flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 cursor-default relative group p-4 ${
+        uniform ? "min-h-[100px]" : "min-h-[120px] md:min-h-[180px] lg:min-h-[220px] xl:min-h-[240px]"
+      }`}
     >
       {img ? (
-        <img
-          src={img}
-          alt={name}
-          className={`${size} aspect-square object-contain transition-all duration-300`}
-        />
+        <div className={uniform ? "w-16 h-16 md:w-20 md:h-20 flex items-center justify-center" : "relative"}>
+          <img
+            src={img}
+            alt={name}
+            loading="lazy"
+            className={`${uniform ? "w-full h-full object-contain" : `${size} aspect-square object-contain`} transition-all duration-300`}
+            style={blendMode ? { mixBlendMode: 'multiply', filter: 'brightness(1.1) contrast(1.15)' } : {}}
+          />
+        </div>
       ) : Icon ? (
         <Icon
           className={`${size} aspect-square transition-all duration-300`}
@@ -217,10 +255,10 @@ export default function Clients() {
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-6">
-              Built in Partnership. Scaled Through Trust.
+              Transforming Potential Together.
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/75 max-w-3xl">
-              A growing list of organisations that invest in inclusive leadership — and choose Leaders in Lipstick® to help them deliver it.
+              Leading organizations partner with Leaders in Lipstick® to cultivate inclusive leadership, elevate talent, and create workplaces where people and performance thrive together.
             </p>
           </motion.div>
         </div>
@@ -273,7 +311,7 @@ export default function Clients() {
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-10 xl:gap-12">
                   {sector.clients.map((client, ci) => (
-                    <ClientCard key={ci} client={client} index={ci} />
+                    <ClientCard key={ci} client={client} index={ci} uniform={sector.label === "Others"} />
                   ))}
                 </div>
                 {si < sectors.length - 1 && <div className="mt-20 border-b border-border" />}

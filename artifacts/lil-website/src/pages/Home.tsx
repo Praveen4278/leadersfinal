@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { useEffect, useState, useRef } from "react";
-import { ArrowRight, Users, Video, Building2, Mountain, Brain, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Users, Video, Building2, Mountain, Brain, ArrowUpRight, Download } from "lucide-react";
 
 import heroImg from "@assets/WhatsApp_Image_2026-06-12_at_22.58.02_1781323608679.jpeg";
 import eventImg1 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.03_1781323608680.jpeg";
@@ -12,6 +12,11 @@ import eventImg5 from "@assets/WhatsApp_Image_2026-06-12_at_22.58.08_17813236086
 import rejiImg from "@assets/WhatsApp_Image_2026-06-12_at_22.58.02_1781323608679.jpeg";
 
 const TYPING_WORDS = ["Leadership.", "Influence.", "Excellence.", "Impact."];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
 
 function useTypingEffect(words: string[], speed = 100, pause = 1800) {
   const [displayed, setDisplayed] = useState("");
@@ -50,6 +55,7 @@ const programs = [
     text: "text-white",
     border: "border-white/20",
     btn: "border-white text-white hover:bg-white hover:text-primary",
+    href: "/women-leadership",
   },
   {
     icon: "◈",
@@ -59,6 +65,7 @@ const programs = [
     text: "text-foreground",
     border: "border-foreground/20",
     btn: "border-foreground text-foreground hover:bg-foreground hover:text-white",
+    href: "/behavioural-intelligence",
   },
   {
     icon: "◎",
@@ -68,6 +75,7 @@ const programs = [
     text: "text-foreground",
     border: "border-foreground/20",
     btn: "border-primary text-primary hover:bg-primary hover:text-white",
+    href: "/strategic-team-skills",
   },
   {
     icon: "⬡",
@@ -77,6 +85,7 @@ const programs = [
     text: "text-white",
     border: "border-white/20",
     btn: "border-white text-white hover:bg-white hover:text-foreground",
+    href: "/ai-training",
   },
 ];
 
@@ -85,28 +94,6 @@ const formats = [
   { icon: Building2, title: "Classroom Training", desc: "Facilitator-led in-person workshops at your premises or venue." },
   { icon: Video, title: "Virtual Workshops", desc: "Live online sessions for global and distributed teams." },
   { icon: Mountain, title: "Outbound Programs", desc: "Experiential learning that disrupts thinking through real-world doing." },
-];
-
-import {
-  SiMastercard,
-  SiDhl,
-  SiPanasonic,
-  SiHp,
-  SiWipro,
-} from "react-icons/si";
-
-type HomeClient = {
-  name: string;
-  Icon: any;
-  color: string;
-};
-
-const clients: HomeClient[] = [
-  { name: "Mastercard", Icon: SiMastercard, color: "#EB001B" },
-  { name: "DHL", Icon: SiDhl, color: "#CC0000" },
-  { name: "Panasonic", Icon: SiPanasonic, color: "#0070C0" },
-  { name: "HP", Icon: SiHp, color: "#0096D6" },
-  { name: "Wipro", Icon: SiWipro, color: "#341C57" },
 ];
 
 const stats = [
@@ -131,11 +118,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
         <div className="relative z-10 container mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
+          <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
             <p className="text-white/60 text-sm uppercase tracking-widest mb-6 font-medium">
               Women-centric in identity. Inclusive in impact.
             </p>
@@ -149,24 +132,54 @@ export default function Home() {
             <p className="text-white/80 text-sm sm:text-base md:text-lg max-w-xl mb-10 font-light leading-relaxed">
               Bespoke leadership and behavioural training for organisations that believe human capability is the ultimate competitive advantage.
             </p>
-            <div className="flex items-center gap-6 flex-wrap">
+            <div className="flex items-center gap-4 flex-wrap">
               <Link href="/programs">
-                <button className="w-12 h-12 rounded-full border-2 border-white text-white flex items-center justify-center hover:bg-white hover:text-foreground transition-all duration-300">
-                  <ArrowRight className="h-5 w-5" />
+                <button className="px-8 py-4 rounded-full bg-accent text-foreground text-sm md:text-base font-bold uppercase tracking-wider hover:bg-white hover:shadow-lg transition-all duration-300 min-h-[44px]">
+                  Explore Programs
                 </button>
               </Link>
-              <Link href="/programs" className="text-white/80 text-sm font-medium hover:text-white transition-colors">
-                Explore Programs
-              </Link>
-              <a
-                href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
-                download
-                className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#70162C] transition-all duration-300"
-              >
-                <span>Download Brochure</span>
-              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-4 rounded-full border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#70162C] transition-all duration-300 min-h-[44px]"
+                >
+                  View Brochure
+                </a>
+                <a
+                  href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
+                  download
+                  rel="noopener noreferrer"
+                  title="Download PDF"
+                  className="flex items-center gap-1.5 text-white/70 text-xs font-medium hover:text-white transition-colors border border-white/30 rounded-full px-4 py-2 hover:border-white min-h-[44px]"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Download PDF
+                </a>
+              </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── IMPACT STATS ── */}
+      <section className="bg-secondary py-16 text-foreground">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-2">{s.num}</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{s.label}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -196,6 +209,7 @@ export default function Home() {
               <img
                 src={eventImg2}
                 alt="Impact session"
+                loading="lazy"
                 className="w-full h-72 md:h-80 object-cover"
               />
             </motion.div>
@@ -210,6 +224,7 @@ export default function Home() {
               <img
                 src={eventImg1}
                 alt="Leadership workshop"
+                loading="lazy"
                 className="w-full h-72 md:h-80 object-cover"
               />
             </motion.div>
@@ -228,6 +243,7 @@ export default function Home() {
               <img
                 src={eventImg2}
                 alt="Impact session"
+                loading="lazy"
                 className="w-full h-72 md:h-80 object-cover"
               />
             </motion.div>
@@ -244,7 +260,7 @@ export default function Home() {
               <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-md">
                 Leaders in Lipstick® has spent over a decade refining the science of leadership development. We integrate behavioural psychology, emotional intelligence frameworks, and real-world application to create measurable, lasting change.
               </p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-wider hover:gap-4 transition-all duration-300">
+              <Link href="/about" className="inline-flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-wider hover:gap-4 transition-all duration-300 min-h-[44px]">
                 Learn More <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
@@ -259,6 +275,7 @@ export default function Home() {
               <img
                 src={eventImg1}
                 alt="Leadership workshop"
+                loading="lazy"
                 className="w-full h-72 md:h-80 object-cover"
               />
             </motion.div>
@@ -266,61 +283,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TESTIMONIAL ── */}
+      <section className="bg-[#f0eef5] py-16">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
+          <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-8">
+            <span className="text-white font-serif text-xl font-bold">"</span>
+          </div>
+          <motion.blockquote
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-serif text-xl sm:text-2xl md:text-4xl italic text-foreground leading-relaxed mb-8"
+          >
+            Leaders in Lipstick® gave our entire organisation a shared language for leadership — and our women leaders a community to grow with.
+          </motion.blockquote>
+          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+            — Head of L&D, Financial Services
+          </p>
+        </div>
+      </section>
+
       {/* ── DELIVERY FORMATS ── */}
-      <section className="bg-[#f0eef5] py-0">
-        <div className="grid md:grid-cols-2 min-h-[80vh]">
-          {/* Left: image + format icons */}
-          <div className="p-10 lg:p-16 flex flex-col gap-8">
-            <motion.img
+      <section className="bg-[#f0eef5] py-20">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: image + format icons */}
+            <div className="flex flex-col gap-8">
+              <motion.img
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               src={eventImg3}
               alt="Training session"
-              className="w-full h-72 object-cover"
+              loading="lazy"
+              className="w-full h-72 md:h-80 object-cover rounded-lg"
             />
-            <div className="grid grid-cols-2 gap-6">
-              {formats.map((f, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <f.icon className="h-6 w-6 text-primary mb-2" strokeWidth={1.5} />
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{f.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-snug">{f.desc}</p>
-                </motion.div>
-              ))}
+              <div className="grid grid-cols-2 gap-6">
+                {formats.map((f, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <f.icon className="h-6 w-6 text-primary mb-2" strokeWidth={1.5} />
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-1">{f.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-snug">{f.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right: heading + image */}
-          <div className="p-10 lg:p-16 flex flex-col justify-between">
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
-                Meeting your people where they are
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-md">
-                Every organisation learns differently. That is why we offer flexible, facilitator-led formats that meet your people where they are — across roles, locations, and languages.
-              </p>
-            </motion.div>
-            <motion.img
+            {/* Right: heading + image */}
+            <div className="flex flex-col gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+                  Meeting your people where they are
+                </h2>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                  Every organisation learns differently. That is why we offer flexible, facilitator-led formats that meet your people where they are — across roles, locations, and languages.
+                </p>
+              </motion.div>
+              <motion.img
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
               src={eventImg4}
               alt="Workshop energy"
-              className="w-full h-64 object-cover mt-8"
+              loading="lazy"
+              className="w-full h-72 md:h-80 object-cover rounded-lg"
             />
+            </div>
           </div>
         </div>
       </section>
@@ -355,94 +397,11 @@ export default function Home() {
                 {p.title}
               </h3>
               <p className="text-xs sm:text-sm leading-relaxed opacity-80 flex-1">{p.desc}</p>
-              <Link href="/programs" className={`mt-6 md:mt-8 inline-block border px-4 py-2 md:px-6 md:py-3 text-[10px] sm:text-xs font-medium uppercase tracking-wider transition-all duration-300 ${p.btn}`}>
+              <Link href={p.href} className={`mt-6 md:mt-8 inline-block border px-4 py-2 md:px-6 md:py-3 text-[10px] sm:text-xs font-medium uppercase tracking-wider transition-all duration-300 min-h-[44px] ${p.btn}`}>
                 Read More
               </Link>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* ── IMPACT STATS ── */}
-      <section className="bg-secondary py-20 text-foreground">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-2">{s.num}</div>
-                <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{s.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── OUR CLIENTS ── */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-6 lg:px-12">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-16"
-          >
-            Our Clients
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 md:gap-x-12 md:gap-y-8 items-center justify-items-center">
-            {clients.map((client, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-2">
-                <client.Icon
-                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12"
-                  style={{ color: client.color }}
-                />
-              </div>
-                <p className="text-[10px] sm:text-xs text-muted-foreground font-medium">{client.name}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/clients"
-              className="inline-block border border-foreground px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-medium uppercase tracking-wider text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
-            >
-              See All Clients
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIAL ── */}
-      <section className="bg-[#f0eef5] py-24">
-        <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
-          <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-8">
-            <span className="text-white font-serif text-xl font-bold">"</span>
-          </div>
-          <motion.blockquote
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="font-serif text-xl sm:text-2xl md:text-4xl italic text-foreground leading-relaxed mb-8"
-          >
-            Leaders in Lipstick® gave our entire organisation a shared language for leadership — and our women leaders a community to grow with.
-          </motion.blockquote>
-          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            — Head of L&D, Financial Services
-          </p>
         </div>
       </section>
 
@@ -454,6 +413,7 @@ export default function Home() {
               <img
                 src={img}
                 alt={`Event ${i + 1}`}
+                loading="lazy"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -477,6 +437,7 @@ export default function Home() {
                 <img
                   src="/qr.png"
                   alt="QR Code to leadersinlipstick.in"
+                  loading="lazy"
                   className="w-40 h-40 md:w-48 md:h-48 rounded-xl shadow-2xl bg-white p-2"
                 />
               </a>
@@ -499,7 +460,7 @@ export default function Home() {
               </h2>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 bg-primary text-white px-8 py-3 sm:px-10 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-primary text-white px-8 py-3 sm:px-10 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-wider hover:bg-primary/80 transition-all duration-300 min-h-[44px]"
               >
                 Partner With Us <ArrowUpRight className="h-4 w-4" />
               </Link>

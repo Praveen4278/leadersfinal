@@ -133,10 +133,10 @@ export default function Programs() {
           {/* Image showcase */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <img src={programImg1} alt="Workshop in action" className="w-full h-72 object-cover rounded-xl shadow-md" />
+              <img src={programImg1} alt="Workshop in action" loading="lazy" className="w-full h-72 object-cover rounded-xl shadow-md" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
-              <img src={programImg2} alt="Group activity" className="w-full h-72 object-cover rounded-xl shadow-md" />
+              <img src={programImg2} alt="Group activity" loading="lazy" className="w-full h-72 object-cover rounded-xl shadow-md" />
             </motion.div>
           </div>
           
@@ -165,7 +165,8 @@ export default function Programs() {
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-primary text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Stream 01</div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Women-Only Leadership Journeys</h2>
-            <p className="text-muted-foreground max-w-2xl">Structured cohort programmes exclusively designed for women at every career stage — from emerging manager to boardroom ready.</p>
+            <p className="text-primary font-medium italic mb-3">Empowering women to lead boldly, grow strategically, and create meaningful impact.</p>
+            <p className="text-muted-foreground max-w-3xl">Accelerating women from potential to powerful leadership. Through immersive cohorts, transformative learning experiences, and a vibrant community of peers, participants build the skills, confidence, and strategic perspective needed to lead boldly, influence effectively, and shape the future of their organizations and communities.</p>
           </motion.div>
           <div className="space-y-8">
             {womenPrograms.map((prog, i) => (
@@ -209,8 +210,8 @@ export default function Programs() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div initial="hidden" whileInView="show" variants={fadeUp} viewport={{ once: true }} className="mb-16">
             <div className="inline-block bg-accent text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Stream 02</div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">All-Employee Behavioural Workshops</h2>
-            <p className="text-muted-foreground max-w-2xl">High-impact workshop modules — open to all employees, delivered to build the behaviours that drive organisational performance.</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Behavioural Capability Accelerator</h2>
+            <p className="text-muted-foreground max-w-3xl">A powerful suite of experiential workshops designed to strengthen the behaviours that fuel performance, collaboration, and leadership. From communication, influence, and negotiation to emotional intelligence, stakeholder management, and executive presence, participants gain practical skills that create measurable impact at both individual and organisational levels.</p>
           </motion.div>
 
           <div className="space-y-16">

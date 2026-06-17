@@ -25,8 +25,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </main>
       <Footer />
 
-      {/* Keep in Touch Floating Button */}
-      <div className="fixed bottom-6 right-6 z-40">
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/919082389632"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full w-14 h-14 bg-[#25D366] hover:bg-[#20BD5F] shadow-lg flex items-center justify-center transition-all duration-300"
+          aria-label="Contact us on WhatsApp"
+        >
+          <span className="text-white text-2xl">💬</span>
+        </a>
+        
+        {/* Keep in Touch Form */}
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button className="rounded-full w-14 h-14 bg-primary hover:bg-primary/90 shadow-lg">

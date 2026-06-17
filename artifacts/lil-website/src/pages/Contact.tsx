@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, Linkedin, Instagram, ArrowRight, CheckCircle } from "lucide-react";
+import { Mail, Phone, Linkedin, Instagram, ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const fadeUp = {
@@ -26,14 +26,20 @@ const contactOptions = [
   {
     icon: Mail,
     label: "General Enquiries",
-    value: "hello@leadersinlipstick.in",
-    link: "mailto:hello@leadersinlipstick.in",
+    value: "shweta@leadersinlipstick.in",
+    link: "mailto:shweta@leadersinlipstick.in",
   },
   {
     icon: Mail,
     label: "Corporate Partnerships",
-    value: "partnerships@leadersinlipstick.in",
-    link: "mailto:partnerships@leadersinlipstick.in",
+    value: "shweta@leadersinlipstick.in",
+    link: "mailto:shweta@leadersinlipstick.in",
+  },
+  {
+    icon: Phone,
+    label: "Phone / WhatsApp",
+    value: "+91 90823 89632",
+    link: "https://wa.me/919082389632",
   },
   {
     icon: Linkedin,
@@ -99,7 +105,7 @@ export default function Contact() {
       // Fallback to mailto if Formspree fails!
       const subject = encodeURIComponent(`Contact from ${data.firstName} ${data.lastName} - ${data.organisation}`);
       const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nOrganisation: ${data.organisation}\nRole: ${data.role}\n\nMessage:\n${data.message}`);
-      window.location.href = `mailto:hello@leadersinlipstick.in?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:shweta@leadersinlipstick.in?subject=${subject}&body=${body}`;
       setSubmitted(true);
       toast({
         title: "Opening email client",
