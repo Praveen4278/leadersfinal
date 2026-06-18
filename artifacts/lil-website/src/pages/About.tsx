@@ -457,7 +457,7 @@ export default function About() {
                 title: "Organisations",
                 desc: "Partner with us to build inclusive leadership pipelines that deliver measurable, lasting impact across your workforce.",
                 cta: "Explore Partnerships",
-                href: "/contact",
+                href: "/clients",
               },
               {
                 title: "Allies & Advocates",

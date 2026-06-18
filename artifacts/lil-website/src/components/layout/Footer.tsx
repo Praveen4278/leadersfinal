@@ -52,6 +52,7 @@ export function Footer() {
                   alt="Max Potential Global — View 22 Programs" 
                   loading="lazy"
                   className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                  style={{ filter: 'invert(95%) sepia(5%) saturate(250%) hue-rotate(190deg) brightness(1.2)' }}
                 />
               </Link>
             </div>

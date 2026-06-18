@@ -118,7 +118,6 @@ export default function BehaviouralIntelligenceDetail() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(ellipse at 30% 60%, #fff 0%, transparent 55%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
-            <div className="inline-block bg-white/20 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-white/30">Workshop Suite</div>
             <div className="w-16 h-1 bg-white mb-8" />
             <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight mb-6">Behavioural Intelligence</h1>
             <p className="text-foreground/80 text-base sm:text-lg max-w-2xl leading-relaxed">High-impact workshops on emotional intelligence, negotiation, influence, communication — skills that move organisations and people forward.</p>

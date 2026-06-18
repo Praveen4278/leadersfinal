@@ -39,9 +39,8 @@ export default function WomenLeadershipDetail() {
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(ellipse at 70% 30%, #D4AF37 0%, transparent 60%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
-            <div className="inline-block bg-accent/20 text-accent text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-accent/30">Women Leadership Journeys</div>
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">{program.title}</h1>
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">Women Leadership Journeys</h1>
             <p className="text-accent font-semibold text-lg mb-3">{program.subtitle}</p>
             <p className="font-serif text-lg italic text-white/80 max-w-2xl">{program.tagline}</p>
             <div className="mt-10 flex flex-wrap gap-4">

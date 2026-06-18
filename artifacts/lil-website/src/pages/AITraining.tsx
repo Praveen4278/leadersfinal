@@ -56,10 +56,6 @@ export default function AITraining() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(ellipse at 80% 40%, #D4AF37 0%, transparent 60%)" }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative max-w-6xl">
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 text-accent px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <Brain className="h-4 w-4" />
-              AI Training
-            </div>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-8">
               AI is a leadership decision.
             </h1>
