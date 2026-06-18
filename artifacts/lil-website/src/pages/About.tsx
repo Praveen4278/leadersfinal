@@ -213,8 +213,9 @@ export default function About() {
               className="bg-white p-6 md:p-10 rounded-2xl shadow-lg border-t-4 border-primary">
               <div className="text-primary text-3xl md:text-4xl font-serif font-bold mb-2">01</div>
               <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Women Leadership Journeys</h3>
+              <p className="text-sm text-primary font-medium italic mb-2">Empowering women to lead boldly, grow strategically, and create meaningful impact.</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Structured, immersive cohort programmes designed exclusively for women — from emerging managers to board-ready executives. Built around real challenges, real peers, and real outcomes.
+                Accelerating women from potential to powerful leadership. Through immersive cohorts, transformative learning experiences, and a vibrant community of peers, participants build the skills, confidence, and strategic perspective needed to lead boldly, influence effectively, and shape the future of their organizations and communities.
               </p>
               <Link href="/programs" className="inline-flex items-center mt-4 md:mt-6 text-primary font-medium hover:underline text-sm">
                 Explore Journeys <ArrowRight className="ml-2 h-4 w-4" />
@@ -223,9 +224,9 @@ export default function About() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }}
               className="bg-white p-6 md:p-10 rounded-2xl shadow-lg border-t-4 border-primary">
               <div className="text-primary text-3xl md:text-4xl font-serif font-bold mb-2">02</div>
-              <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Behavioural Programs for All</h3>
+              <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Behavioural Capability Accelerator</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                20 high-impact workshop modules — from negotiation and emotional intelligence to storytelling and stakeholder management — open to all employees, delivered to build the behaviours that drive organisational performance.
+                A powerful suite of experiential workshops designed to strengthen the behaviours that fuel performance, collaboration, and leadership. From communication, influence, and negotiation to emotional intelligence, stakeholder management, and executive presence, participants gain practical skills that create measurable impact at both individual and organisational levels.
               </p>
               <Link href="/programs" className="inline-flex items-center mt-4 md:mt-6 text-primary font-medium hover:underline text-sm">
                 Explore Workshops <ArrowRight className="ml-2 h-4 w-4" />
