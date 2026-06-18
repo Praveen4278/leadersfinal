@@ -35,9 +35,9 @@ const fadeUp = {
 };
 
 const stats = [
-  { num: "2000+", label: "Women Impacted" },
-  { num: "50+", label: "Organisations" },
-  { num: "68%", label: "Promotion Rate" },
+  { num: "1 Lakh+", label: "Participants Impacted" },
+  { num: "100+", label: "Organisations" },
+  { num: "1400+", label: "Workshops Conducted" },
   { num: "8+", label: "Countries" },
 ];
 
@@ -95,7 +95,7 @@ export default function SuccessStories() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}>
-                <div className="font-serif text-4xl md:text-7xl font-bold text-accent mb-2">{stat.num}</div>
+                <div className="font-serif text-3xl md:text-5xl font-bold text-accent mb-2 leading-tight">{stat.num}</div>
                 <div className="text-xs sm:text-sm text-white/70 uppercase tracking-widest font-medium">{stat.label}</div>
               </motion.div>
             ))}

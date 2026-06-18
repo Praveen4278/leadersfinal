@@ -269,10 +269,10 @@ export default function Clients() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { num: "50+", label: "Organisations" },
+              { num: "100+", label: "Organisations" },
               { num: "4",   label: "Industry Sectors" },
               { num: "8+",  label: "Countries" },
-              { num: "2000+", label: "Leaders Trained" },
+              { num: "1400+", label: "Workshops Conducted" },
             ].map((s, i) => (
               <div key={i}>
                 <div className="font-serif text-2xl sm:text-4xl font-bold text-accent mb-1">{s.num}</div>

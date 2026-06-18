@@ -97,9 +97,9 @@ const formats = [
 ];
 
 const stats = [
-  { num: "2000+", label: "Women Impacted" },
-  { num: "50+", label: "Organisations" },
-  { num: "68%", label: "Promotion Rate" },
+  { num: "1 Lakh+", label: "Participants Impacted" },
+  { num: "100+", label: "Organisations" },
+  { num: "1400+", label: "Workshops Conducted" },
   { num: "8+", label: "Countries" },
 ];
 
