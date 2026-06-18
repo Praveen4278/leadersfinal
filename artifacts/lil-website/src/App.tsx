@@ -15,6 +15,7 @@ import SuccessStories from "@/pages/SuccessStories";
 import Clients from "@/pages/Clients";
 import Contact from "@/pages/Contact";
 import WhyUs from "@/pages/WhyUs";
+import CommunityPage from "@/pages/CommunityPage";
 import WomenLeadershipDetail from "@/pages/WomenLeadershipDetail";
 import BehaviouralIntelligenceDetail from "@/pages/BehaviouralIntelligenceDetail";
 import StrategicTeamSkillsDetail from "@/pages/StrategicTeamSkillsDetail";
@@ -134,6 +135,7 @@ function Router() {
         <Route path="/clients" component={Clients} />
         <Route path="/contact" component={Contact} />
         <Route path="/why-us" component={WhyUs} />
+        <Route path="/our-community" component={CommunityPage} />
         <Route path="/women-leadership" component={WomenLeadershipDetail} />
         <Route path="/behavioural-intelligence" component={BehaviouralIntelligenceDetail} />
         <Route path="/strategic-team-skills" component={StrategicTeamSkillsDetail} />
