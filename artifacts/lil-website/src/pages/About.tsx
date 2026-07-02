@@ -116,7 +116,7 @@ const team = [
   },
   {
     name: "Shweta Batra",
-    title: "Life & Mindset Coach | Counselling Psychologist | Master Trainer | Author | Educator",
+    title: "Learning & Development Facilitator / Master Trainer / Former K-12 Principal / Author | LIL Strategic Partner — Learning & Ecosystem Development",
     img: shwetaImg,
     quote: "Transforming Mindsets. Developing Leaders. Unlocking Human Potential.",
     bio: "For over two decades, she has partnered with leaders, professionals, educators, students, and institutions to unlock human potential and drive meaningful transformation. Integrating psychology, leadership development, and behavioural insight, she helps individuals and organizations navigate complexity, cultivate resilience, and translate potential into purposeful action, sustainable growth, and lasting impact.",
@@ -124,9 +124,9 @@ const team = [
       "World Record Holder",
       "Award-Winning Life & Mindset Coach",
       "International Keynote Speaker (2025)",
-      "C20/G20 Strategic Moderator",
+      "Inspiring Woman Psychologist Awardee",
     ],
-    global: "Mumbai, India · International Stages",
+    global: "Mumbai, India",
     linkedin: "https://www.linkedin.com/in/shweta-b-792836a5/",
   },
   {

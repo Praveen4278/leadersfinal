@@ -140,7 +140,7 @@ export default function Home() {
               </Link>
               <div className="flex items-center gap-3">
                 <a
-                  href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
+                  href="/LIL Company Brochure V3.1.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-4 rounded-full border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#70162C] transition-all duration-300 min-h-[44px]"
@@ -148,7 +148,7 @@ export default function Home() {
                   View Brochure
                 </a>
                 <a
-                  href="/LIL - Brochure - Corporate Employees - Brochure V1.1.pdf"
+                  href="/LIL Company Brochure V3.1.pdf"
                   download
                   rel="noopener noreferrer"
                   title="Download PDF"
